@@ -1,12 +1,29 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/lists/lists",
+    "pages/list-detail/list-detail",
+    "pages/orders/orders",
+    "pages/order-info/order-info",
+    "pages/order-detail/order-detail",
+    "pages/scanning/scanning"
   ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    },{
+      "pagePath": "pages/scanning/scanning",
+      "text": "扫描二维码"
+    },{
+      "pagePath": "pages/orders/orders",
+      "text": "我的预约"
+    }]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "预约会议室",
     "navigationBarTextStyle":"black"
   }
 }
