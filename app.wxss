@@ -56,3 +56,46 @@ view,navigator{
 .pull-right{
     float: right;
 }
+
+/* 公告列表样式 */
+.noticeList{
+  margin-top: 20rpx;
+  padding: 0 16rpx;
+}
+.noticeList-item{
+  padding: 24rpx 6rpx 16rpx;
+  border-bottom: 1px solid #f3f3f3;
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: flex;
+}
+.noticeList-item-r{
+  padding-left: 8px;
+  -webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex:1;
+  overflow: hidden;
+}
+.noticeList-item-r text{
+  display: block;
+}
+.noticeList-item-title{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  color: #393939;
+}
+.noticeList-item-desc{
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  text-overflow: -o-ellipsis-lastline;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: #999;
+  line-height: 1.3;
+  margin-top: 5px;
+  height: 43px;
+}
