@@ -1,29 +1,36 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/lists/lists",
-    "pages/list-detail/list-detail",
     "pages/orders/orders",
-    "pages/order-info/order-info",
-    "pages/order-detail/order-detail",
-    "pages/scanning/scanning"
+    "pages/notice/notice",
+    "pages/personal/personal",
+    "pages/login/login",
+    "pages/scanning/scanning",
+    "pages/booking/booking"
   ],
-  "tabBar": {
+  "tabBar":{
+    "selectedColor": "#b02923",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页"
     },{
-      "pagePath": "pages/scanning/scanning",
-      "text": "扫描二维码"
-    },{
       "pagePath": "pages/orders/orders",
-      "text": "我的预约"
+      "text": "我的预订"
+    },{
+      "pagePath": "pages/notice/notice",
+      "text": "公告"
+    },{
+      "pagePath": "pages/personal/personal",
+      "text": "我的"
     }]
   },
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "预约会议室",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#b02923",
+    "navigationBarTitleText": "万科会议室",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#eeeeee"
   }
 }

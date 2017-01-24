@@ -1,10 +1,41 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <swiper indicator-dots="true" autoplay="true" interval="3000" duration="800" class="swiper-banner bg-white">
+    <block wx:for="{{banners}}">
+      <swiper-item>
+        <image src="{{item}}" mode="scaleToFill" style="width:100%;height:400rpx;"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="menuWrap bg-white">
+    <view class="menuWrap-item">
+      <navigator class="menuWrap-item-navi" url="">
+        <span class="iconfont icon-qrcode"></span>
+        <text>扫描预订</text>
+      </navigator>
+    </view>
+    <view class="menuWrap-item">
+      <navigator class="menuWrap-item-navi" url="">
+        <span class="iconfont icon-zuowei"></span>
+        <text>预约座位</text>
+      </navigator>
+    </view>
+    <view class="menuWrap-item">
+      <navigator class="menuWrap-item-navi" url="">
+        <span class="iconfont icon-huiyishi"></span>
+        <text>预约会议室</text>
+      </navigator>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="noticeList bg-white">
+    <block wx:for="{{notice}}">
+      <view class="noticeList-item">
+        <image src="{{item.image}}" style="width:112px;height:68px;"></image>
+        <view class="noticeList-item-r">
+          <text class="noticeList-item-title">{{item.title}}</text>
+          <text class="noticeList-item-desc">{{item.desc}}</text>
+        </view>
+      </view>
+    </block>
   </view>
 </view>

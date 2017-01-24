@@ -1,4 +1,4 @@
-// pages/scanning/scanning.js
+// pages/booking/booking.js
 Page({
   data:{},
   onLoad:function(options){

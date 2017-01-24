@@ -1,4 +1,4 @@
-// pages/scanning/scanning.js
+// pages/login/login.js
 Page({
   data:{},
   onLoad:function(options){

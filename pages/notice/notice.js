@@ -1,4 +1,4 @@
-// pages/scanning/scanning.js
+// pages/notice/notice.js
 Page({
   data:{},
   onLoad:function(options){
