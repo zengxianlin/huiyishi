@@ -18,6 +18,7 @@ view,navigator{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-more:before { content: "\e6a7"; }
 
 .icon-less:before { content: "\e6a5"; }
 
@@ -38,6 +39,8 @@ view,navigator{
 .icon-mobilephone:before { content: "\e72a"; }
 
 .icon-huiyishi:before { content: "\e603"; }
+
+
 
 /* 共用的小样式 */
 .bg-white{

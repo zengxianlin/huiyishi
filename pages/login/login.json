@@ -1,1 +1,10 @@
-{}
+{
+"window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#b02923",
+    "navigationBarTitleText": "登录",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#eeeeee"
+}
+
+}

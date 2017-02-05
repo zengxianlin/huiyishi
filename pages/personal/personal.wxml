@@ -2,7 +2,7 @@
 <page>
 <view class="personalWrap">
     <view class="personalMe" >
-        <image src="" style="width:78px;height:87px;border:1px solid;float:left;"></image>
+        <image src="" style="width:68px;height:77px;border:1px solid;float:left;margin:20rpx 20rpx"></image>
         <view class="personalInfo">
             <text>姓名: {{}}</text>
             <text>电话: {{}}</text>
@@ -10,11 +10,11 @@
     </view>
     <!-- 列表 -->
     <view class="personalList">
-        <text bindtap="listFirst">我的预定</text>
-        <text>关于万科</text>
-        <text>版本号</text>
-        <text>密码修改</text>
-        <text>意见反馈</text>
+        <text bindtap="listFirst">我的预定</text><span>></span>
+        <text>关于万科</text><span>></span>
+        <text>版本号</text><span>></span>
+        <text>密码修改</text><span>></span>
+        <text style="border:none;">意见反馈</text><span>></span>
     </view>
     <button type="default"  bindtap="defaultLogin" hover-class="other-button-hover"> 登录 </button>
 </view>

@@ -1,8 +1,8 @@
 /* pages/personal/personal.wxss */
 /** 修改button默认的点击态样式类**/
 page{
-    background-color:#fff;
-    font-size:40rpx;
+    /*background-color:#fff;*/
+    font-size:30rpx;
 }
 .button-hover {
     background-color: #b02923;
@@ -20,20 +20,25 @@ button{
 
 }
 .personalWrap{
-    margin:10rpx;
+    /*margin:10rpx;*/
 }
 .personalMe{
     height:210rpx;
-    margin:30rpx 30rpx 30rpx 60rpx;
+    margin:30rpx 0rpx 30rpx 0rpx;
+    background-color: #fff;
 }
 .personalInfo{
     float:left;
-    margin: 20rpx 0rpx 0rpx 40rpx;
+    margin: 20rpx 0rpx 0rpx 20rpx;
 }
 .personalInfo wx-text{
     display: block;
     line-height:70rpx;
     height:70rpx;
+}
+.personalList{
+    background-color: #fff;    
+    padding:0rpx 20rpx;
 }
 .personalList wx-text{
     display: block;
@@ -41,5 +46,11 @@ button{
     height:70rpx;
     border-bottom:1px solid #ddd;
     margin-bottom:8rpx;
-    text-align: center;
+}
+.personalList wx-span{
+    float:right;
+    font-size:40rpx;
+    margin-top:-63rpx;
+    color:#ddd;
+
 }
