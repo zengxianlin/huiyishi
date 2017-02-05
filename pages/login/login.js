@@ -15,5 +15,11 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  login:function(){
+    // 登录
+    wx.switchTab({
+      url:'../index/index'
+    })
   }
 })

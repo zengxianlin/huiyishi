@@ -1,4 +1,5 @@
 // pages/personal/personal.js
+var app = getApp();
 Page({
   data:{},
   onLoad:function(options){
@@ -15,5 +16,17 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  defaultLogin:function(){
+    // 点击跳转登录
+    wx.navigateTo({
+      url: '../login/login'
+    })
+  },
+  listFirst:function(){
+    // 我的预订
+    wx.switchTab({
+      url: '../orders/orders'
+    })    
   }
 })

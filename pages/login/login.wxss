@@ -1,1 +1,34 @@
 /* pages/login/login.wxss */
+page{
+    background-color:#fff;
+    font-size:40rpx;
+}
+.login image{
+    width:80%;
+    height:100rpx;
+    margin:20% auto;
+    display:block;
+
+}
+input{
+    border:1px solid #ddd;
+    line-height:80rpx;
+    height:80rpx;
+    width:80%;
+    margin:5% auto;
+}
+.button-hover {
+    background-color: #b02923;
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+    background-color: #b02923;
+    color:#fff;
+}
+button{
+    background-color: #b02923;
+    color:#fff;
+    top:200rpx;
+    width:80%;
+
+}

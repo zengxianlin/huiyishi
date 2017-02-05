@@ -1,1 +1,45 @@
 /* pages/personal/personal.wxss */
+/** 修改button默认的点击态样式类**/
+page{
+    background-color:#fff;
+    font-size:40rpx;
+}
+.button-hover {
+    background-color: #b02923;
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+    background-color: #b02923;
+    color:#fff;
+}
+button{
+    background-color: #b02923;
+    color:#fff;
+    top:200rpx;
+    width:80%;
+
+}
+.personalWrap{
+    margin:10rpx;
+}
+.personalMe{
+    height:210rpx;
+    margin:30rpx 30rpx 30rpx 60rpx;
+}
+.personalInfo{
+    float:left;
+    margin: 20rpx 0rpx 0rpx 40rpx;
+}
+.personalInfo wx-text{
+    display: block;
+    line-height:70rpx;
+    height:70rpx;
+}
+.personalList wx-text{
+    display: block;
+    line-height:70rpx;
+    height:70rpx;
+    border-bottom:1px solid #ddd;
+    margin-bottom:8rpx;
+    text-align: center;
+}
