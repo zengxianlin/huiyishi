@@ -1,0 +1,5 @@
+<template name="qrcode">
+  <view class="qrcode">
+    <span class="iconfont icon-qrcode"></span>
+  </view>
+</template>

@@ -39,3 +39,5 @@
     </block>
   </view>
 </view>
+<import src="../../template/template.wxml"/>
+<template is="qrcode" />
