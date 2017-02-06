@@ -1,2 +1,52 @@
 <!--pages/orders/orders.wxml-->
-<text>pages/orders/orders.wxml</text>
+<view class="ordersTab">
+    <text bindtap="tabLeft" style="background-color:{{colLeft}}">座位</text>
+    <text bindtap="tabRight" style="background-color:{{colRight}}">会议室</text>    
+</view>
+<view style="height:90rpx;"></view>
+<!-- 会议室 -->
+<block wx:for="{{seat}}">
+<view wx:if="{{item.wanc === true}}" class="ordersRoom" hidden="{{ordersRoom}}" >
+    <view class="roomLeft">
+        <text>会议室预定: {{item.huiy}}</text>
+        <text>楼层: {{item.louc}}</text>
+        <text>会议室门号: {{item.huimh}}</text>
+    </view>
+    <view class="roomBut" hidden="{{ordersBut}}">
+        <text bindtap="defaultLogin" > 归还 </text>
+        <text bindtap="defaultLogin" > 取消 </text>
+    </view>    
+</view>
+<!-- 已完成 -->
+<view  wx:elif="{{item.wanc !== true}}" class="ordersRoom" hidden="{{ordersRoom}}" style="color:#ddd;">
+    <view class="roomLeft">
+        <text>会议室预定: {{item.huiy}}</text>
+        <text>楼层: {{item.louc}}</text>
+        <text>会议室门号: {{item.huimh}}</text>
+    </view>   
+</view>
+</block>
+
+<!-- 座位号 -->
+<block wx:for="{{room}}">
+<view wx:if="{{item.wanc === true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:{{orderColor}}">
+    <view class="seatLeft">
+        <text>楼层: {{item.louc}}</text>
+        <text>门牌号: {{item.menp}}</text>
+        <text>座位号: {{item.zuow}}</text>
+    </view>
+    <view class="seatBut" hidden="{{ordersBut}}">
+        <text bindtap="defaultLogin" > 归还 </text>
+        <text bindtap="defaultLogin" > 取消 </text>
+    </view>  
+</view>
+<!-- 已完成 -->
+<view wx:elif="{{item.wanc !== true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:#ddd">
+    <view class="seatLeft">
+        <text>楼层: {{item.louc}}</text>
+        <text>门牌号: {{item.menp}}</text>
+        <text>座位号: {{item.zuow}}</text>
+    </view> 
+</view>
+</block>
+
