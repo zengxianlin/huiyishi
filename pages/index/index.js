@@ -14,5 +14,8 @@ Page({
         notice: res.data.notice
       })
     })
+  },
+  getScanning: function () {
+    app.getScanning()
   }
 })
