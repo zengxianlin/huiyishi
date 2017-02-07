@@ -88,3 +88,12 @@
     border:1px solid #b02923;
     margin-bottom:14rpx;
 }
+.tabCalled{
+    width:40%;
+    height:2px;
+    background-color:#b02923;
+    position: absolute;
+    bottom:0;
+    -webkit-transition:left .35s; /* Safari */
+            transition:left .35s;
+}

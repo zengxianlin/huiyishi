@@ -1,7 +1,8 @@
 <!--pages/orders/orders.wxml-->
 <view class="ordersTab">
-    <text bindtap="tabLeft" style="color:{{colLeft}};border-bottom:{{borLeft}}">座位</text>
-    <text bindtap="tabRight" style="color:{{colRight}};border-bottom:{{borRight}}">会议室</text>    
+    <text bindtap="tabLeft" style="color:{{colLeft}};">座位</text>
+    <text bindtap="tabRight" style="color:{{colRight}};">会议室</text>
+    <view class="tabCalled" style="left:{{Left}}"></view>
 </view>
 <view style="height:90rpx;"></view>
 <!-- 会议室 -->
@@ -15,7 +16,7 @@
     <view class="roomBut" hidden="{{ordersBut}}">
         <text bindtap="defaultLogin" > 归还 </text>
         <text bindtap="defaultLogin" > 取消 </text>
-    </view>    
+    </view>
 </view>
 <!-- 已完成 -->
 <view  wx:elif="{{item.complate !== true}}" class="ordersRoom" hidden="{{ordersRoom}}" style="color:#999;">
@@ -23,7 +24,7 @@
         <text>预定时间: {{item.date}}</text>
         <text>楼层: {{item.floor}}</text>
         <text>会议室门号: {{item.roomNo}}</text>
-    </view>   
+    </view>
 </view>
 </block>
 
@@ -39,7 +40,7 @@
     <view class="seatBut" hidden="{{ordersBut}}">
         <text bindtap="defaultLogin" > 归还 </text>
         <text bindtap="defaultLogin" > 取消 </text>
-    </view>  
+    </view>
 </view>
 <!-- 已完成 -->
 <view wx:elif="{{item.complate !== true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:#999">
@@ -48,7 +49,7 @@
         <text>楼层: {{item.floor}}</text>
         <text>门牌号: {{item.roomNo}}</text>
         <text>座位号: {{item.seatNo}}</text>
-    </view> 
+    </view>
 </view>
 </block>
 
