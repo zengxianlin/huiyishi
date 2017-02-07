@@ -2,44 +2,44 @@
 Page({
   data:{
     room:[{
-      date:'10:00-12:00',
-      floor:'1F',
-      roomNo:'1022',
+      date:'2017-02-07 10:00-12:00',
+      floor:'4F',
+      roomNo:'4022',
       complate:true
     },{
-      date:'10:00-12:00',
+      date:'2017-02-07 20:00-22:00',
       floor:'1F',
-      roomNo:'1022',
+      roomNo:'1011',
       complate:true     
     },{
-      date:'10:00-12:00',
-      floor:'1F',
-      roomNo:'1022',
-      complate:true      
+      date:'2017-02-06 09:30-10:45',
+      floor:'17F',
+      roomNo:'1736',
+      complate:false      
     }],
     seat:[{
-      date:'10:00-12:00',
+      date:'2017-02-06 10:00-12:00',
       floor:'1F',
-      roomNo:'A',
+      roomNo:'B',
       seatNo:'A1',
       complate:true 
     },{
-      date:'10:00-12:00',
-      floor:'1F',
+      date:'2017-02-07 09:30-10:45',
+      floor:'5F',
       roomNo:'A',
-      seatNo:'A1',
+      seatNo:'B1',
       complate:true 
     },{
-      date:'10:00-12:00',
+      date:'2017-02-08 14:00-16:00',
       floor:'1F',
       roomNo:'A',
-      seatNo:'A1',
-      complate:true 
+      seatNo:'A11',
+      complate:false 
     },{
-      date:'10:00-12:00',
-      floor:'1F',
-      roomNo:'A',
-      seatNo:'A1',
+      date:'2017-02-09 10:00-11:30',
+      floor:'3F',
+      roomNo:'F',
+      seatNo:'A13',
       complate:true 
     }]
 
