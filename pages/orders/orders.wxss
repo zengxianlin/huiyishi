@@ -1,1 +1,90 @@
 /* pages/orders/orders.wxss */
+.ordersTab{
+    position: fixed;
+    top:0;
+    font-size: 34rpx;
+    width: 100%;
+    height: 80rpx;
+    background-color: #fff;
+    line-height: 80rpx;
+    z-index:10;
+    margin-bottom: 90rpx;
+}
+.ordersTab wx-text{
+    text-align:center;
+    width:50%;
+    display:block;
+    float:left;
+
+}
+.ordersRoom{
+    margin-bottom: 30rpx;
+    background-color: #fff;
+    padding:36rpx;
+    height:200rpx;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+.roomLeft{
+    float:left;
+}
+.roomLeft wx-text{
+    display:block;
+    line-height:46rpx;
+}
+.roomBut{
+    float:right;
+}
+.ordersSeat{
+    background-color: #fff;
+    padding:36rpx;
+    height:200rpx;
+    margin-bottom:30rpx;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+
+}
+.seatLeft{
+    float:left;
+}
+.seatLeft wx-text{
+    display:block;
+    line-height:46rpx;
+}
+.seatBut{
+    float:right;
+}
+.roomBut wx-text {
+    display:block;
+    box-sizing:border-box;
+    font-size:13px;
+    text-align:center;
+    text-decoration:none;
+    line-height:60rpx;
+    border-radius:5px;
+    -webkit-tap-highlight-color:transparent;
+    overflow:hidden;
+    color:#fff;
+    background-color:#b02923;
+    width:140rpx;
+    height:60rpx;
+    border:1px solid #b02923;
+    margin-bottom:14rpx;
+}
+.seatBut wx-text {
+    display:block;
+    box-sizing:border-box;
+    font-size:13px;
+    text-align:center;
+    text-decoration:none;
+    line-height:60rpx;
+    border-radius:5px;
+    -webkit-tap-highlight-color:transparent;
+    overflow:hidden;
+    color:#fff;
+    background-color:#b02923;
+    width:140rpx;
+    height:60rpx;
+    border:1px solid #b02923;
+    margin-bottom:14rpx;
+}

@@ -37,7 +37,7 @@ button{
     height:70rpx;
 }
 .personalList{
-    background-color: #fff;    
+    background-color: #fff;
     padding:0rpx 20rpx;
 }
 .personalList wx-text{
@@ -52,5 +52,22 @@ button{
     font-size:40rpx;
     margin-top:-63rpx;
     color:#ddd;
-
+}
+.personalList text{
+    position:relative;
+}
+.personalList text:before{
+    content:'';
+    height:10px;
+    width:10px;
+    display:block;
+    border:1px solid #000;
+    border-left-width:0;
+    border-bottom-width:0;
+    position:absolute;
+    top:10px;
+    right:6px;
+    -webkit-transform:rotate(45deg);
+       -moz-transform:rotate(45deg);
+            transform:rotate(45deg);
 }
