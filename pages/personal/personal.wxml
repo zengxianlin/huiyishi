@@ -2,10 +2,10 @@
 <page>
 <view class="personalWrap">
     <view class="personalMe" >
-        <image src="" style="width:68px;height:77px;border:1px solid;float:left;margin:20rpx 20rpx"></image>
+        <image src="../../images/userhead.jpg" style="width:68px;height:68px;border:1px solid #ddd;float:left;margin:20rpx 20rpx;border-radius: 50%;"></image>
         <view class="personalInfo">
-            <text>姓名: {{}}</text>
-            <text>电话: {{}}</text>
+            <text>姓名: 小布</text>
+            <text>电话: 1501111111</text>
         </view>
     </view>
     <!-- 列表 -->

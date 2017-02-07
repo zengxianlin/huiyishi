@@ -1,6 +1,6 @@
 /* pages/booking/booking.wxss */
 page{
-  background-color: #eee;
+  background-color: #fff;
 }
 .userDate{
     padding:24rpx;

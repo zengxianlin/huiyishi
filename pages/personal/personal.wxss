@@ -63,7 +63,7 @@ button{
     color:#b02923;
     font-size:18px !important;
     font-weight:bold;
-    padding-right: 10rpx;
+    padding-right: 16rpx;
     text-align:center;
     vertical-align:top;
 }
