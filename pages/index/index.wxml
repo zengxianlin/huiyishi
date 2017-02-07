@@ -9,10 +9,10 @@
   </swiper>
   <view class="menuWrap bg-white">
     <view class="menuWrap-item">
-      <navigator class="menuWrap-item-navi" url="">
+      <view class="menuWrap-item-navi" bindtap="getScanning">
         <span class="iconfont icon-qrcode"></span>
         <text>扫描预订</text>
-      </navigator>
+      </view>
     </view>
     <view class="menuWrap-item">
       <navigator class="menuWrap-item-navi" url="../sitting/sitting">

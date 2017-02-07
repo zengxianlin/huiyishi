@@ -18,5 +18,15 @@ App({
         }
       }
     })
+  },
+  getScanning: function(){
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+      },
+      fail: (res) => {
+        console.log(res)
+      }
+    })
   }
 })
