@@ -10,11 +10,11 @@
     </view>
     <!-- 列表 -->
     <view class="personalList">
-        <text class="iconfont icon-reserve"  bindtap="listFirst">我的预定</text>
-        <text class="iconfont icon-about" >关于万科</text>
-        <text class="iconfont icon-edition" >版本号</text>
-        <text class="iconfont icon-password" >密码修改</text>
-        <text class="iconfont icon-feedback" style="border:none;">意见反馈</text>
+        <view class="iconfont icon-reserve"  bindtap="listFirst">我的预定</view>
+        <view class="iconfont icon-about" >关于万科</view>
+        <view class="iconfont icon-edition" >版本号</view>
+        <view class="iconfont icon-password" >密码修改</view>
+        <view class="iconfont icon-feedback" style="border:none;">意见反馈</view>
     </view>
     <button type="default"  bindtap="defaultLogin" hover-class="other-button-hover"> 登录 </button>
 </view>

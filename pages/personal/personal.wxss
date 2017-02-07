@@ -40,7 +40,7 @@ button{
     background-color: #fff;
     padding:0rpx 20rpx;
 }
-.personalList wx-text{
+.personalList view{
     display: block;
     line-height:70rpx;
     height:70rpx;
@@ -53,13 +53,13 @@ button{
     margin-top:-63rpx;
     color:#ddd;
 }
-.personalList text{
+.personalList view{
     position:relative;
 }
 .iconfont{
     font-size:14px;
 }
-.personalList text:before{
+.personalList view:before{
     color:#b02923;
     font-size:18px !important;
     font-weight:bold;
@@ -67,7 +67,7 @@ button{
     text-align:center;
     vertical-align:top;
 }
-.personalList text:after{
+.personalList view:after{
     content:'';
     height:10px;
     width:10px;

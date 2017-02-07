@@ -11,16 +11,12 @@ page{
     font-size:14px;
      border-bottom: 1px solid #dcdcdc;
 }
-.userDate > view text{
-    /* color:#555; */
-}
 .userDate > view text,picker{
     float: right;
 }
-.iconfont{
+.iconfont:before{
     color:#b02923;
     font-size:18px;
-    padding-right:16rpx;
     text-align: center;
     vertical-align: top;
     font-weight:bold;

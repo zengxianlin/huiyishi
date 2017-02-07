@@ -1,32 +1,32 @@
 <!--pages/booking/booking.wxml-->
 <view class="container">
    <view class="userDate">
-        <view class="userName">
-            <view class="iconfont icon-name"></view>姓名
+        <view class="userName iconfont icon-name">
+            姓名
             <text>小布</text>
         </view>
-        <view class="userPhone">
-            <view class="iconfont icon-phone"></view>手机号
+        <view class="userPhone iconfont icon-phone">
+            手机号
             <text>1501111111</text>
         </view>
-        <view class="userTime">
-            <view class="iconfont icon-time"></view>时间筛选
+        <view class="userTime iconfont icon-time">
+            时间筛选
             <picker class="comboBox" bindchange="bindPickerTime" value="{{index}}" range="{{times}}">
                 <view class="picker">
                   {{times[index]}}
                 </view>
             </picker>
         </view>
-        <view class="name">
-            <view class="iconfont icon-floor"></view>预约楼层
+        <view class="name iconfont icon-floor">
+            预约楼层
             <picker class="comboCovers" bindchange="bindPickerOrder" value="{{first}}" range="{{floor}}">
                 <view class="picker">
                   {{floor[first]}}
                 </view>
             </picker>
         </view>
-        <view class="name">
-            <view class="iconfont icon-seat"></view>座位平面图：{{}}
+        <view class="name iconfont icon-seat">
+            座位平面图：{{}}
         </view>
     </view>
     <button type="default" hover-class="other-button-hover">确认预定</button>
