@@ -21,7 +21,7 @@
       </navigator>
     </view>
     <view class="menuWrap-item">
-      <navigator class="menuWrap-item-navi" url="">
+      <navigator class="menuWrap-item-navi" url="../conference/conference">
         <span class="iconfont icon-huiyishi"></span>
         <text>预约会议室</text>
       </navigator>

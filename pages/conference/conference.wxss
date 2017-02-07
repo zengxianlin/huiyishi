@@ -1,0 +1,72 @@
+/* pages/booking/booking.wxss */
+.userDate{
+    padding:24rpx;
+    background-color:#fff;
+}
+.userDate > view{
+    line-height:70rpx;
+    font-size:14px;
+}
+.comboBox{
+    display: inline-block;
+    position: relative;
+    width: 260rpx;
+    line-height: 55rpx;
+    border: 1px solid #eee;
+    margin-right: 16rpx;
+}
+.comboBox text{
+    display: block;
+    width: 260rpx;
+    line-height: 55rpx;
+    text-indent: 14rpx;
+}
+.comboCovers{
+    position: absolute;
+    top: 55rpx;
+    left: -1rpx ;
+    z-index: 10;
+    width: 260rpx;
+    text-indent: 16rpx;
+    background-color:#fff;
+    border: 1px solid #eee;
+}
+.icon-moreunfold:before {
+    position: absolute;
+    right: 8rpx;
+    line-height: 58rpx;
+}
+.floor{
+   width:110rpx !important;
+}
+button{
+    background-color:#b02923;
+    color:#fff;
+    margin-top:200rpx;
+    width:80%;
+
+}
+@keyframes slidown{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+.slidown{
+    display: none;
+    animation: slidown 0s ease-in both;
+}
+@keyframes slidup{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.slidup{
+    display: block;
+    animation: slidup .3s ease-in both;
+}

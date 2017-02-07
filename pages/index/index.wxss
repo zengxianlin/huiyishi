@@ -27,3 +27,6 @@
   display: block;
   margin-top: 8px;
 }
+.icon-qrcode{
+  font-weight:bold;
+}

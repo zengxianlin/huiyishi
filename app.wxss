@@ -50,8 +50,8 @@ view,navigator{
     content: "";
     display: table;
 }
-.clearfix:after { 
-    clear: both; 
+.clearfix:after {
+    clear: both;
 }
 .pull-left{
     float: left;
@@ -88,6 +88,7 @@ view,navigator{
   text-overflow: ellipsis;
   font-weight: bold;
   color: #393939;
+  font-size:28rpx;
 }
 .noticeList-item-desc{
   overflow: hidden;
@@ -100,7 +101,8 @@ view,navigator{
   color: #999;
   line-height: 1.3;
   margin-top: 5px;
-  height: 43px;
+  height: 46px;
+  font-size:26rpx;
 }
 /* 二维码浮标 */
 .qrcode{
@@ -111,7 +113,7 @@ view,navigator{
   font-size: 30px;
   width: 40px;
   height: 40px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 1);
   text-align: center;
   line-height: 40px;
 }

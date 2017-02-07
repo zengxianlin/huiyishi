@@ -1,6 +1,6 @@
 /* pages/orders/orders.wxss */
 .ordersTab{
-    position: fixed;  
+    position: fixed;
     top:0;
     font-size: 34rpx;
     width: 100%;
