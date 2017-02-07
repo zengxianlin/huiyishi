@@ -1,32 +1,33 @@
 <!--pages/booking/booking.wxml-->
 <view class="container">
    <view class="userDate">
-        <view class="userName">姓名：小布</view>
-        <view class="userPhone">手机号：1501111111</view>
+        <view class="userName">
+            <view class="iconfont icon-name"></view>姓名
+            <text>小布</text>
+        </view>
+        <view class="userPhone">
+            <view class="iconfont icon-phone"></view>手机号
+            <text>1501111111</text>
+        </view>
         <view class="userTime">
-            时间筛选：
-            <view class="comboBox iconfont icon-moreunfold">
-                <text class="comboText" bindtap="comboBox">{{comboText}}</text>
-                <view class="comboCovers {{flag ? 'slidown' : 'slidup'}}">
-                    <text bindtap="comboBox1" data-text="08:00--12:00">08:00--12:00</text>
-                    <text bindtap="comboBox2" data-text="14:00--18:00">14:00--18:00</text>
+            <view class="iconfont icon-time"></view>时间筛选
+            <picker class="comboBox" bindchange="bindPickerTime" value="{{index}}" range="{{times}}">
+                <view class="picker">
+                  {{times[index]}}
                 </view>
-            </view>
-            <text>2017年10月10日</text>
+            </picker>
         </view>
         <view class="name">
-            预约楼层：
-            <view class="comboBox floor iconfont icon-moreunfold">
-                <text class="comboText floor" bindtap="floor">{{floorText}}</text>
-                <view class="comboCovers floor {{floor ? 'slidown' : 'slidup'}}">
-                    <block wx:for="{{items}}">
-                        <text bindtap="floorBox" data-text="{{item}}"> {{item}} </text>
-                    </block>
+            <view class="iconfont icon-floor"></view>预约楼层
+            <picker class="comboCovers" bindchange="bindPickerOrder" value="{{first}}" range="{{floor}}">
+                <view class="picker">
+                  {{floor[first]}}
                 </view>
-            </view>
+            </picker>
         </view>
-        <view class="name">座位平面图：{{}}
+        <view class="name">
+            <view class="iconfont icon-seat"></view>座位平面图：{{}}
         </view>
-   </view>
-        <button type="default" hover-class="other-button-hover">确认预定</button>
+    </view>
+    <button type="default" hover-class="other-button-hover">确认预定</button>
 </view>

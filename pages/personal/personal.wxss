@@ -56,7 +56,18 @@ button{
 .personalList text{
     position:relative;
 }
+.iconfont{
+    font-size:14px;
+}
 .personalList text:before{
+    color:#b02923;
+    font-size:18px !important;
+    font-weight:bold;
+    padding-right: 10rpx;
+    text-align:center;
+    vertical-align:top;
+}
+.personalList text:after{
     content:'';
     height:10px;
     width:10px;

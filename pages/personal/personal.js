@@ -27,6 +27,6 @@ Page({
     // 我的预订
     wx.switchTab({
       url: '../orders/orders'
-    })    
+    })
   }
 })
