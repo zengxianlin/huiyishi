@@ -2,41 +2,45 @@
 Page({
   data:{
     room:[{
-      louc:'1F',
-      menp:'1022',
-      zuow:'35',
-      wanc:true
+      date:'10:00-12:00',
+      floor:'1F',
+      roomNo:'1022',
+      complate:true
     },{
-      louc:'6F',
-      menp:'602',
-      zuow:'01',
-      wanc:true      
+      date:'10:00-12:00',
+      floor:'1F',
+      roomNo:'1022',
+      complate:true     
     },{
-      louc:'11F',
-      menp:'1111',
-      zuow:'11',
-      wanc:false      
+      date:'10:00-12:00',
+      floor:'1F',
+      roomNo:'1022',
+      complate:true      
     }],
     seat:[{
-      huiy:'10:00',
-      louc:'4F',
-      huimh:'XXA-XV',
-      wanc:true 
+      date:'10:00-12:00',
+      floor:'1F',
+      roomNo:'A',
+      seatNo:'A1',
+      complate:true 
     },{
-      huiy:'22:00',
-      louc:'9F',
-      huimh:'SSS-XV',
-      wanc:true 
+      date:'10:00-12:00',
+      floor:'1F',
+      roomNo:'A',
+      seatNo:'A1',
+      complate:true 
     },{
-      huiy:'10:00',
-      louc:'4F',
-      huimh:'XXA-XV',
-      wanc:true 
+      date:'10:00-12:00',
+      floor:'1F',
+      roomNo:'A',
+      seatNo:'A1',
+      complate:true 
     },{
-      huiy:'14:00',
-      louc:'3F',
-      huimh:'XXOO-XV',
-      wanc:false 
+      date:'10:00-12:00',
+      floor:'1F',
+      roomNo:'A',
+      seatNo:'A1',
+      complate:true 
     }]
 
   },
