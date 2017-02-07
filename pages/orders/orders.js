@@ -71,5 +71,16 @@ Page({
           colRight:'#b02923',
           borRight:'3px solid #b02923'
       });  
+  },
+  erweima:function(){
+    wx.scanCode({
+  success: (res) => {
+    console.log(res)
+  }
+})
+      // this.setData({
+      //   console.log('11');
+      // })
+      
   }
 })
