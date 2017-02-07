@@ -45,7 +45,8 @@ Page({
       this.setData({
           ordersRoom:true,
           ordersSeat:false,
-          colLeft:'#ddd'
+          colLeft:'#b02923',
+          borLeft:'3px solid #b02923'
       })    
   },
   tabLeft:function(){
@@ -53,8 +54,10 @@ Page({
       this.setData({
           ordersRoom:true,
           ordersSeat:false,
-          colLeft:'#ddd',
-          colRight:''
+          colLeft:'#b02923',
+          borLeft:'3px solid #b02923',
+          colRight:'',
+          borRight:''
       });
       
   },
@@ -64,7 +67,9 @@ Page({
           ordersRoom:false,
           ordersSeat:true,
           colLeft:'',
-          colRight:'#ddd'
+          borLeft:'',
+          colRight:'#b02923',
+          borRight:'3px solid #b02923'
       });  
   }
 })
