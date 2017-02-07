@@ -1,4 +1,5 @@
 <!--pages/notice/notice.wxml-->
+<scroll-view scroll-y="true" style="height:100%" bindscrolltolower="loadMore">
   <view class="noticeList bg-white" style="margin-top:0;">
     <block wx:for="{{notice}}">
       <view class="noticeList-item">
@@ -10,3 +11,4 @@
       </view>
     </block>
   </view>
+</scroll-view>
