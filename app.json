@@ -6,7 +6,8 @@
     "pages/personal/personal",
     "pages/login/login",
     "pages/scanning/scanning",
-    "pages/booking/booking"
+    "pages/booking/booking",
+    "pages/sitting/sitting"
   ],
   "tabBar":{
     "selectedColor": "#b02923",
