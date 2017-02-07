@@ -64,11 +64,11 @@
     border-radius:5px;
     -webkit-tap-highlight-color:transparent;
     overflow:hidden;
-    color:#000000;
-    background-color:#F8F8F8;
+    color:#fff;
+    background-color:#b02923;
     width:140rpx;
     height:60rpx;
-    border:1px solid #ddd;
+    border:1px solid #b02923;
     margin-bottom:14rpx;
 }
 .seatBut wx-text {
@@ -81,10 +81,10 @@
     border-radius:5px;
     -webkit-tap-highlight-color:transparent;
     overflow:hidden;
-    color:#000000;
-    background-color:#F8F8F8;
+    color:#fff;
+    background-color:#b02923;
     width:140rpx;
     height:60rpx;
-    border:1px solid #ddd;
+    border:1px solid #b02923;
     margin-bottom:14rpx;
 }

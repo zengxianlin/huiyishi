@@ -1,7 +1,7 @@
 <!--pages/orders/orders.wxml-->
 <view class="ordersTab">
-    <text bindtap="tabLeft" style="background-color:{{colLeft}}">座位</text>
-    <text bindtap="tabRight" style="background-color:{{colRight}}">会议室</text>    
+    <text bindtap="tabLeft" style="color:{{colLeft}};border-bottom:{{borLeft}}">座位</text>
+    <text bindtap="tabRight" style="color:{{colRight}};border-bottom:{{borRight}}">会议室</text>    
 </view>
 <view style="height:90rpx;"></view>
 <!-- 会议室 -->
@@ -18,7 +18,7 @@
     </view>    
 </view>
 <!-- 已完成 -->
-<view  wx:elif="{{item.wanc !== true}}" class="ordersRoom" hidden="{{ordersRoom}}" style="color:#ddd;">
+<view  wx:elif="{{item.wanc !== true}}" class="ordersRoom" hidden="{{ordersRoom}}" style="color:#999;">
     <view class="roomLeft">
         <text>会议室预定: {{item.huiy}}</text>
         <text>楼层: {{item.louc}}</text>
@@ -41,7 +41,7 @@
     </view>  
 </view>
 <!-- 已完成 -->
-<view wx:elif="{{item.wanc !== true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:#ddd">
+<view wx:elif="{{item.wanc !== true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:#999">
     <view class="seatLeft">
         <text>楼层: {{item.louc}}</text>
         <text>门牌号: {{item.menp}}</text>
