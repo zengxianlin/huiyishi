@@ -7,6 +7,5 @@
             <input name="userPassword" class="{{ userPassword == true ? 'userError' : ''}}" type="text" password  maxlength="100" placeholder="请输入您的密码" />
         </view>
         <button type="default" formType="submit" hover-class="other-button-hover"> 登录 </button>
-        <button hover-class="other-button-hover" bindtap="remov"> 清除 </button>
     </form>
 </view>
