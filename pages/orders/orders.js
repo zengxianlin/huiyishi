@@ -8,18 +8,18 @@ Page({
       roomNo:'4022',
       complate:true
     },{
-      date:'2017-02-07 20:00-22:00',
+      date:'2017-02-07 14:00-16:00',
       floor:'1F',
       roomNo:'1011',
       complate:true
     },{
-      date:'2017-02-06 09:30-10:45',
+      date:'2017-02-05 14:00-16:00',
       floor:'17F',
       roomNo:'1736',
       complate:false
     }],
     seat:[{
-      date:'2017-02-06 10:00-12:00',
+      date:'2017-02-04 10:00-12:00',
       floor:'1F',
       roomNo:'B',
       seatNo:'A1',
@@ -41,7 +41,7 @@ Page({
       floor:'3F',
       roomNo:'F',
       seatNo:'A13',
-      complate:true
+      complate:false
     }]
 
   },
