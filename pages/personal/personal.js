@@ -38,7 +38,7 @@ Page({
     if(login == true){
       // 点击退出
       wx.showToast({
-        title: '加载中',
+        title: '退出中',
         icon: 'loading'
       })
       setTimeout(function(){
