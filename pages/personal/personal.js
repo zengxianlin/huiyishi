@@ -1,9 +1,25 @@
 // pages/personal/personal.js
-var app = getApp();
+var userInfo = wx.getStorageSync('userInfo');
 Page({
-  data:{},
+  data:{
+    userName: '',
+    userPhone: '',
+    userHead: '../../images/unuserhead.jpg',
+    operation:'登录',
+    login: false
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
+    // 读取用户信息
+    if(userInfo.length !== 0){
+      this.setData({
+        operation: '退出',
+        login: true,
+        userName:userInfo.userName,
+        userPhone:userInfo.userPhone,
+        userHead: '../../images/userhead.jpg'
+      })
+    }
   },
   onReady:function(){
     // 页面渲染完成
@@ -17,11 +33,27 @@ Page({
   onUnload:function(){
     // 页面关闭
   },
-  defaultLogin:function(){
-    // 点击跳转登录
-    wx.navigateTo({
-      url: '../login/login'
-    })
+  defaultLogin:function(e){
+    var login = e.currentTarget.dataset.login;
+    if(login == true){
+      // 点击退出
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading'
+      })
+      setTimeout(function(){
+        wx.hideToast();
+        wx.removeStorageSync('userInfo');
+        wx.switchTab({
+          url: '../index/index'
+        })
+      },2000);
+    }else{
+      // 点击登录
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }
   },
   listFirst:function(){
     // 我的预订

@@ -8,7 +8,6 @@ page{
     height:100rpx;
     margin:20% auto;
     display:block;
-
 }
 input{
     border:1px solid #ddd;
@@ -16,6 +15,9 @@ input{
     height:80rpx;
     width:80%;
     margin:5% auto;
+    padding-left:20rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 .button-hover {
     background-color: #b02923;
@@ -31,4 +33,7 @@ button{
     top:200rpx;
     width:80%;
 
+}
+.userError{
+    border-color:#b02923;
 }

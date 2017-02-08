@@ -1,6 +1,10 @@
 // pages/login/login.js
+var app = getApp();
 Page({
-  data:{},
+  data:{
+    userName: false,
+    userPassword: false
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
   },
@@ -16,10 +20,72 @@ Page({
   onUnload:function(){
     // 页面关闭
   },
+  confirm: function () {
+    this.setData({
+      'dialog.hidden': true,
+      'dialog.title': '',
+      'dialog.content': ''
+    })
+  },
   login:function(){
     // 登录
     wx.switchTab({
       url:'../index/index'
+    });
+    // 读取用户信息
+    console.log(wx.getStorageSync('userInfo'))
+  },
+  formSubmit: function(e) {
+    var that = this;
+    var userName = e.detail.value.userName;
+    var userPassword = e.detail.value.userPassword;
+    if(userName == '' ){
+        this.setData({
+          userName: true,
+        })
+        return false;
+    }else{
+        this.setData({
+          userName: false,
+        })
+    }
+    if(userPassword == ''){
+        this.setData({
+          userPassword: true,
+        })
+        return false;
+    }else{
+        this.setData({
+          userPassword: false,
+        })
+    }
+
+    if(userName !== 'vanke' && userPassword !== '123456'){
+      wx.showModal({
+        title: '登录失败',
+        content: '账号或密码不正确',
+        confirmColor: '#b02923',
+        showCancel: false
+      })
+      return false;
+    }
+
+    wx.showToast({
+      title: '登录中',
+      icon: 'loading'
     })
+    var params = {
+      'userName': userName,
+      'userPhone': 13011111111
+    }
+
+    app.setStorageUser(params, function (res){
+      if(res.errMsg == 'setStorage:ok'){
+          setTimeout(function(){
+            wx.hideToast();
+            that.login();
+          },2000);
+        }
+    });
   }
 })

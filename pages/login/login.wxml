@@ -1,9 +1,12 @@
 <!--pages/login/login.wxml-->
 <view class="login">
     <image src="../../images/vankelogo.png" ></image>
-    <view class="section">
-        <input type="text"  maxlength="11" placeholder="真实姓名/电话" />
-        <input type="text" password  maxlength="100" placeholder="请输入您的密码" />
-    </view>
-    <button type="default"  bindtap="login" hover-class="other-button-hover"> 登录 </button>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="section">
+            <input name="userName" class="{{ userName == true ? 'userError' : ''}}" type="text" maxlength="11" placeholder="真实姓名/电话" />
+            <input name="userPassword" class="{{ userPassword == true ? 'userError' : ''}}" type="text" password  maxlength="100" placeholder="请输入您的密码" />
+        </view>
+        <button type="default" formType="submit" hover-class="other-button-hover"> 登录 </button>
+        <button hover-class="other-button-hover" bindtap="remov"> 清除 </button>
+    </form>
 </view>

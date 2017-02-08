@@ -26,7 +26,7 @@
             </picker>
         </view>
         <view class="name iconfont icon-seat">
-            座位平面图：{{}}
+            座位平面图{{}}
         </view>
     </view>
     <button type="default" hover-class="other-button-hover">确认预定</button>

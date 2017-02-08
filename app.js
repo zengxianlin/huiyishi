@@ -1,7 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-    
+
   },
   getRequest: function(url,callback){
     wx.showToast({
@@ -28,5 +28,17 @@ App({
         console.log(res)
       }
     })
+  },
+  setStorageUser: function(params,callback){
+    var that = this;
+    wx.setStorage({
+      key:'userInfo',
+      data:params,
+      success: function(res) {
+        if(callback && typeof callback == 'function'){
+          callback(res)
+        }
+      }
+    });
   }
 })
