@@ -12,20 +12,29 @@
   ],
   "tabBar":{
     "selectedColor": "#b02923",
+    "color": "#666",
     "borderStyle": "black",
     "backgroundColor": "#fff",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页"
+      "text": "首页",
+      "iconPath": "images/icon/index_A.png",
+      "selectedIconPath": "images/icon/index_B.png"
     },{
       "pagePath": "pages/orders/orders",
-      "text": "我的预订"
+      "text": "我的预订",
+      "iconPath": "images/icon/orders_A.png",
+      "selectedIconPath": "images/icon/orders_B.png"
     },{
       "pagePath": "pages/notice/notice",
-      "text": "公告"
+      "text": "公告",
+      "iconPath": "images/icon/notice_A.png",
+      "selectedIconPath": "images/icon/notice_B.png"
     },{
       "pagePath": "pages/personal/personal",
-      "text": "我的"
+      "text": "我的",
+      "iconPath": "images/icon/personal_A.png",
+      "selectedIconPath": "images/icon/personal_B.png"
     }]
   },
   "window":{
