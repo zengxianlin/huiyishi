@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "/wxParse/wxParse.wxss";
 page{
   background-color: #eee;
   font-size: 12px;
