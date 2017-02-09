@@ -1,5 +1,5 @@
 <template name="qrcode">
-  <view class="qrcode">
+  <view class="qrcode" bindtap="getScanning">
     <span class="iconfont icon-qrcode"></span>
   </view>
 </template>

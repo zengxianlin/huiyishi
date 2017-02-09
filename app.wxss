@@ -9,11 +9,11 @@ view,navigator{
 }
 @font-face {
   font-family: 'iconfont';  /* project id 225123 */
-  src: url('http://at.alicdn.com/t/font_vkd3bl42t0zoajor.eot');
-  src: url('http://at.alicdn.com/t/font_vkd3bl42t0zoajor.eot?#iefix') format('embedded-opentype'),
-  url('http://at.alicdn.com/t/font_vkd3bl42t0zoajor.woff') format('woff'),
-  url('http://at.alicdn.com/t/font_vkd3bl42t0zoajor.ttf') format('truetype'),
-  url('http://at.alicdn.com/t/font_vkd3bl42t0zoajor.svg#iconfont') format('svg');
+  src: url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.eot');
+  src: url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family:"iconfont" !important;

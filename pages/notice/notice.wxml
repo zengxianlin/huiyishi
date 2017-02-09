@@ -1,5 +1,5 @@
 <!--pages/notice/notice.wxml-->
-<scroll-view scroll-y="true" style="height:100%" bindscrolltolower="loadMore">
+<scroll-view scroll-y="true" style="height:100%" bindscrolltolower="loadMore" bindscroll="scroll">
   <view class="noticeList bg-white" style="margin-top:0;">
     <block wx:for="{{notice}}">
       <view class="noticeList-item">
@@ -11,6 +11,16 @@
       </view>
     </block>
   </view>
+<<<<<<< HEAD
 </scroll-view>
 <import src="../../template/template.wxml"/>
 <template is="qrcode" />
+=======
+<!--   <view class="tips1">
+      <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+          <icon type="waiting" size="45"/><text>玩命的加载中...</text>
+      </view>
+      <view wx:else><text>没有更多内容了</text></view>
+  </view> -->
+</scroll-view>
+>>>>>>> 865b10800ca268e46fe3a589c2d170576f1f61e0
