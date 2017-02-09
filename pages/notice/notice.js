@@ -37,10 +37,20 @@ Page({
       image: '../../images/notice-2.png',
       title: '万科首次上榜《财富》世界500强 名列第356位',
       desc: '2016年7月20日，《财富》“世界500强”企业排行榜出炉，万科企业股份有限公司凭借2015年年度1843.18亿元的营收...'
-    }]    
+    }],
+    page: 1,
+    size: 10,
+    hasMore:true    
   },
-  loadMore: function(e) {
-    console.log("1")
+  loadMore:function(e) {
+    // console.log(e)
+    //   if(!this.data.hasMore) return
+    //   this.setData({
+          
+    //   })
+  },
+  scroll:function(e){
+    // console.log(e);
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
