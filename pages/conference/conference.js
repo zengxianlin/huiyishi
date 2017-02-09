@@ -11,10 +11,26 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
-
   },
   onShow:function(){
     // 页面显示
+    // 读取用户信息
+    var userInfo = wx.getStorageSync('userInfo');
+    if(userInfo.length !== 0){
+      this.setData({
+        userName: userInfo.userName,
+        userPhone: userInfo.userPhone,
+        login: true,
+        btnSubmit: '确认预定'
+      })
+    }else{
+      this.setData({
+        userName: '',
+        userPhone: '',
+        login: false,
+        btnSubmit: '登录'
+      })
+    }
   },
   onHide:function(){
     // 页面隐藏
@@ -23,15 +39,23 @@ Page({
     // 页面关闭
   },
   bindPickerTime: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
     })
   },
   bindPickerOrder: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       first: e.detail.value
     })
+  },
+  btnSubmit:function(){
+    if(this.data.login){
+      console.log('预定成功')
+    }else{
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }
+
   }
 })

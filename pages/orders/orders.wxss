@@ -97,3 +97,9 @@
     -webkit-transition:left .35s; /* Safari */
             transition:left .35s;
 }
+.ordersTitle{
+    text-align: center;
+    margin-top: 200rpx;
+    font-size:16px;
+    color:#666;
+}

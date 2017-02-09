@@ -29,5 +29,5 @@
             座位平面图{{}}
         </view>
     </view>
-    <button type="default" bindtap="button" hover-class="other-button-hover">确认预定</button>
+    <button type="default" bindtap="btnSubmit" hover-class="other-button-hover">{{btnSubmit}}</button>
 </view>

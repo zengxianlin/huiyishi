@@ -1,11 +1,6 @@
 // pages/personal/personal.js
 Page({
   data:{
-    userName: '',
-    userPhone: '',
-    userHead: '../../images/unuserhead.jpg',
-    operation:'登录',
-    login: false
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -23,6 +18,14 @@ Page({
         userName:userInfo.userName,
         userPhone:userInfo.userPhone,
         userHead: '../../images/userhead.jpg'
+      })
+    }else{
+      this.setData({
+        userName: '',
+        userPhone: '',
+        userHead: '../../images/unuserhead.jpg',
+        operation:'登录',
+        login: false
       })
     }
   },
@@ -56,8 +59,16 @@ Page({
   },
   listFirst:function(){
     // 我的预订
-    wx.switchTab({
-      url: '../orders/orders'
-    })
+    if(this.data.login){
+      wx.switchTab({
+        url: '../orders/orders'
+      })
+    }else{
+      wx.showToast({
+        title: '请登录',
+        icon: 'loading',
+        duration: 800
+      })
+    }
   }
 })

@@ -18,4 +18,6 @@
     </view>
     <button type="default"  bindtap="defaultLogin" data-login="{{login}}" hover-class="other-button-hover"> {{operation}} </button>
 </view>
+<import src="../../template/template.wxml"/>
+<template is="qrcode" />
 </page>

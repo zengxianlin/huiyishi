@@ -5,53 +5,55 @@
     <view class="tabCalled" style="left:{{Left}}"></view>
 </view>
 <view style="height:90rpx;"></view>
-<!-- 会议室 -->
-<block wx:for="{{room}}">
-<view wx:if="{{item.complate === true}}" class="ordersRoom" hidden="{{ordersRoom}}" >
-    <view class="roomLeft">
-        <text>预定时间: {{item.date}}</text>
-        <text>楼层: {{item.floor}}</text>
-        <text>会议室门号: {{item.roomNo}}</text>
-    </view>
-    <view class="roomBut" hidden="{{ordersBut}}">
-        <text bindtap="defaultLogin" > 归还 </text>
-        <text bindtap="defaultLogin" > 取消 </text>
-    </view>
+<view class="orderContent" hidden="{{hidden}}">
+    <!-- 会议室 -->
+    <block wx:for="{{room}}">
+        <view wx:if="{{item.complate === true}}" class="ordersRoom" hidden="{{ordersRoom}}" >
+            <view class="roomLeft">
+                <text>预定时间: {{item.date}}</text>
+                <text>楼层: {{item.floor}}</text>
+                <text>会议室门号: {{item.roomNo}}</text>
+            </view>
+            <view class="roomBut" hidden="{{ordersBut}}">
+                <text bindtap="defaultLogin" > 归还 </text>
+                <text bindtap="defaultLogin" > 取消 </text>
+            </view>
+        </view>
+        <!-- 已完成 -->
+        <view  wx:elif="{{item.complate !== true}}" class="ordersRoom" hidden="{{ordersRoom}}" style="color:#999;">
+            <view class="roomLeft">
+                <text>预定时间: {{item.date}}</text>
+                <text>楼层: {{item.floor}}</text>
+                <text>会议室门号: {{item.roomNo}}</text>
+            </view>
+        </view>
+    </block>
+    <!-- 座位号 -->
+    <block wx:for="{{seat}}">
+        <view wx:if="{{item.complate === true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:{{orderColor}}">
+            <view class="seatLeft">
+                <!-- <text>预定时间: {{item.date}}</text> -->
+                <text>楼层: {{item.floor}}</text>
+                <text>门牌号: {{item.roomNo}}</text>
+                <text>座位号: {{item.seatNo}}</text>
+            </view>
+            <view class="seatBut" hidden="{{ordersBut}}">
+                <text bindtap="defaultLogin" > 归还 </text>
+                <text bindtap="defaultLogin" > 取消 </text>
+            </view>
+        </view>
+        <!-- 已完成 -->
+        <view wx:elif="{{item.complate !== true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:#999">
+            <view class="seatLeft">
+                <!-- <text>预定时间: {{item.date}}</text> -->
+                <text>楼层: {{item.floor}}</text>
+                <text>门牌号: {{item.roomNo}}</text>
+                <text>座位号: {{item.seatNo}}</text>
+            </view>
+        </view>
+    </block>
 </view>
-<!-- 已完成 -->
-<view  wx:elif="{{item.complate !== true}}" class="ordersRoom" hidden="{{ordersRoom}}" style="color:#999;">
-    <view class="roomLeft">
-        <text>预定时间: {{item.date}}</text>
-        <text>楼层: {{item.floor}}</text>
-        <text>会议室门号: {{item.roomNo}}</text>
-    </view>
-</view>
-</block>
-
-<!-- 座位号 -->
-<block wx:for="{{seat}}">
-<view wx:if="{{item.complate === true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:{{orderColor}}">
-    <view class="seatLeft">
-        <!-- <text>预定时间: {{item.date}}</text> -->
-        <text>楼层: {{item.floor}}</text>
-        <text>门牌号: {{item.roomNo}}</text>
-        <text>座位号: {{item.seatNo}}</text>
-    </view>
-    <view class="seatBut" hidden="{{ordersBut}}">
-        <text bindtap="defaultLogin" > 归还 </text>
-        <text bindtap="defaultLogin" > 取消 </text>
-    </view>
-</view>
-<!-- 已完成 -->
-<view wx:elif="{{item.complate !== true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:#999">
-    <view class="seatLeft">
-        <!-- <text>预定时间: {{item.date}}</text> -->
-        <text>楼层: {{item.floor}}</text>
-        <text>门牌号: {{item.roomNo}}</text>
-        <text>座位号: {{item.seatNo}}</text>
-    </view>
-</view>
-</block>
+<view class="ordersTitle" hidden="{{prompt}}">{{ordersTitle}}</view>
 
 
 

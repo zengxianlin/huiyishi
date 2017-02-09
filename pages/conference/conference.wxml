@@ -3,11 +3,11 @@
    <view class="userDate">
         <view class="userName iconfont icon-name">
             姓名
-            <text>小布</text>
+            <text>{{userName}}</text>
         </view>
         <view class="userPhone iconfont icon-phone">
             手机号
-            <text>1501111111</text>
+            <text>{{userPhone}}</text>
         </view>
         <view class="userTime iconfont icon-time">
             时间筛选
@@ -29,5 +29,5 @@
             座位平面图{{}}
         </view>
     </view>
-    <button type="default" hover-class="other-button-hover">确认预定</button>
+    <button type="default" bindtap="btnSubmit" hover-class="other-button-hover">{{btnSubmit}}</button>
 </view>

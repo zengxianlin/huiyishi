@@ -2,6 +2,9 @@
 Page({
   data:{
     Left:'5%',
+    hidden: false,
+    prompt: true,
+    ordersTitle: '暂无预定座位',
     room:[{
       date:'2017-02-07 10:00-12:00',
       floor:'4F',
@@ -54,6 +57,20 @@ Page({
           borLeft:'3px solid #b02923'
       })
   },
+  onShow: function(){
+    // console.log(wx.removeStorageSync('userInfo'))
+
+    // if(wx.removeStorageSync('userInfo') == undefined || wx.removeStorageSync('userInfo') == null){
+    //   this.setData({
+    //       hidden:true,
+    //       prompt: false
+    //   })
+    // }else{
+    //   this.setData({
+    //     hidden: false
+    //   })
+    // }
+  },
   tabLeft:function(){
     // 点击座位
       this.setData({
@@ -62,7 +79,8 @@ Page({
           colLeft:'#b02923',
           colRight:'',
           borRight:'',
-          Left:'5%'
+          Left:'5%',
+          ordersTitle: '暂无预定座位'
       });
 
   },
@@ -74,7 +92,8 @@ Page({
           colLeft:'',
           borLeft:'',
           colRight:'#b02923',
-          Left:'55%'
+          Left:'55%',
+          ordersTitle: '暂无预定会议室'
       });
   }
 })

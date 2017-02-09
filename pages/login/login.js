@@ -27,13 +27,22 @@ Page({
       'dialog.content': ''
     })
   },
-  login:function(){
-    // 登录
-    wx.switchTab({
-      url:'../index/index'
+  login:function(params){
+    wx.showToast({
+      title: '登录中',
+      icon: 'loading'
+    })
+    app.setStorageUser(params, function (res){
+      if(res.errMsg == 'setStorage:ok'){
+          setTimeout(function(){
+            wx.hideToast();
+            // 登录
+            wx.switchTab({
+              url:'../index/index'
+            });
+          },2000);
+        }
     });
-    // 读取用户信息
-    console.log(wx.getStorageSync('userInfo'))
   },
   formSubmit: function(e) {
     var that = this;
@@ -69,23 +78,10 @@ Page({
       })
       return false;
     }
-
-    wx.showToast({
-      title: '登录中',
-      icon: 'loading'
-    })
     var params = {
       'userName': userName,
       'userPhone': 13011111111
     }
-
-    app.setStorageUser(params, function (res){
-      if(res.errMsg == 'setStorage:ok'){
-          setTimeout(function(){
-            wx.hideToast();
-            that.login();
-          },2000);
-        }
-    });
+    that.login(params);
   }
 })

@@ -17,6 +17,7 @@ page{
 .iconfont:before{
     color:#b02923;
     font-size:18px;
+    padding-right: 10rpx;
     text-align: center;
     vertical-align: top;
     font-weight:bold;
