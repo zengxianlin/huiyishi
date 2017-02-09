@@ -22,10 +22,19 @@ App({
   getScanning: function(){
     wx.scanCode({
       success: (res) => {
-        console.log(res)
+        var result = res.result
+        result = result.replace('http://','')
+        wx.navigateTo({
+          url: '../'+result
+        })
       },
       fail: (res) => {
-        console.log(res)
+        wx.showModal({
+          title: '提示',
+          content: res.errMsg,
+          success: function(res) {
+          }
+        })
       }
     })
   },
