@@ -4,15 +4,16 @@ Page({
     times: ['08:00--12:00','14:00--18:00'],
     floor:['1F', '2F', '3F'],
     index: 0,
-    first: 0
+    first: 0,
+    picker:true
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    // if(){
-    //   this.setData({
-    //     picker: true
-    //   })
-    // }
+    if(options.id == undefined){
+      this.setData({
+        picker: false
+      })
+    }
   },
   onReady:function(){
     // 页面渲染完成
@@ -61,6 +62,5 @@ Page({
         url: '../login/login'
       })
     }
-
   }
 })
