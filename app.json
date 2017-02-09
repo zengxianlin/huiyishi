@@ -8,7 +8,8 @@
     "pages/scanning/scanning",
     "pages/booking/booking",
     "pages/sitting/sitting",
-    "pages/conference/conference"
+    "pages/conference/conference",
+    "pages/article/article"
   ],
   "tabBar":{
     "selectedColor": "#b02923",

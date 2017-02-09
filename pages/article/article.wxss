@@ -1,0 +1,10 @@
+/* pages/article/article.wxss */
+page{
+    background-color: #fff;
+}
+.article-content{
+    padding: 10px;
+}
+.wxParse-p{
+    padding-top: 8px;
+}

@@ -29,13 +29,13 @@
   </view>
   <view class="noticeList bg-white">
     <block wx:for="{{notice}}">
-      <view class="noticeList-item">
+      <navigator class="noticeList-item" url="../article/article">
         <image src="{{item.image}}" style="width:112px;height:68px;"></image>
         <view class="noticeList-item-r">
           <text class="noticeList-item-title">{{item.title}}</text>
           <text class="noticeList-item-desc">{{item.desc}}</text>
         </view>
-      </view>
+      </navigator>
     </block>
   </view>
 </view>
