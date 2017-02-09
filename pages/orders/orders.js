@@ -48,28 +48,29 @@ Page({
     }]
 
   },
-  onLoad:function(options){
+  onLoad:function(){
     // 页面初始化 options为页面跳转所带来的参数
       this.setData({
           ordersRoom:true,
           ordersSeat:false,
           colLeft:'#b02923',
           borLeft:'3px solid #b02923'
-      })
+      });
   },
   onShow: function(){
-    // console.log(wx.removeStorageSync('userInfo'))
-
-    // if(wx.removeStorageSync('userInfo') == undefined || wx.removeStorageSync('userInfo') == null){
-    //   this.setData({
-    //       hidden:true,
-    //       prompt: false
-    //   })
-    // }else{
-    //   this.setData({
-    //     hidden: false
-    //   })
-    // }
+      const userInfo = wx.getStorageSync('userInfo');
+      console.log(userInfo)
+      if(userInfo.length === 0){
+        this.setData({
+            hidden: true,
+            prompt: false
+        })
+      }else{
+        this.setData({
+            hidden: false,
+            prompt: true
+        })
+      }
   },
   tabLeft:function(){
     // 点击座位

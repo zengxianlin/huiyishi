@@ -1,5 +1,5 @@
 // pages/login/login.js
-var app = getApp();
+const app = getApp();
 Page({
   data:{
     userName: false,
@@ -45,9 +45,9 @@ Page({
     });
   },
   formSubmit: function(e) {
-    var that = this;
-    var userName = e.detail.value.userName;
-    var userPassword = e.detail.value.userPassword;
+    let that = this;
+    let userName = e.detail.value.userName;
+    let userPassword = e.detail.value.userPassword;
     if(userName == '' ){
         this.setData({
           userName: true,
@@ -78,7 +78,7 @@ Page({
       })
       return false;
     }
-    var params = {
+    let params = {
       'userName': userName,
       'userPhone': 13011111111
     }

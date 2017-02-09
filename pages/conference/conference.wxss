@@ -48,3 +48,10 @@ button{
     margin-top:200rpx;
     width:80%;
 }
+.comboRoom{
+    padding-right:0;
+}
+.comboRoom:before{
+    content:'';
+    border:none;
+}

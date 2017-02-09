@@ -1,4 +1,5 @@
 // pages/personal/personal.js
+const app = getApp();
 Page({
   data:{
   },
@@ -36,7 +37,7 @@ Page({
     // 页面关闭
   },
   defaultLogin:function(e){
-    var login = e.currentTarget.dataset.login;
+    let login = e.currentTarget.dataset.login;
     if(login == true){
       // 点击退出
       wx.showToast({
@@ -70,5 +71,8 @@ Page({
         duration: 800
       })
     }
+  },
+  getScanning: function () {
+    app.getScanning()
   }
 })

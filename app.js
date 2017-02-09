@@ -31,6 +31,7 @@ App({
       fail: (res) => {
         wx.showModal({
           title: '提示',
+          confirmColor: '#b02923',
           content: res.errMsg,
           success: function(res) {
           }
@@ -39,7 +40,6 @@ App({
     })
   },
   setStorageUser: function(params,callback){
-    var that = this;
     wx.setStorage({
       key:'userInfo',
       data:params,

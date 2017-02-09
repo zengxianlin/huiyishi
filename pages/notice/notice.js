@@ -1,4 +1,5 @@
 // pages/notice/notice.js
+var app = getApp();
 Page({
   data:{
     notice:[{
@@ -40,13 +41,13 @@ Page({
     }],
     page: 1,
     size: 10,
-    hasMore:true    
+    hasMore:true
   },
   loadMore:function(e) {
     // console.log(e)
     //   if(!this.data.hasMore) return
     //   this.setData({
-          
+
     //   })
   },
   scroll:function(e){
@@ -66,5 +67,8 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  getScanning: function () {
+    app.getScanning()
   }
 })

@@ -11,7 +11,7 @@
         </view>
         <view class="userTime iconfont icon-time">
             时间筛选
-            <picker class="comboBox" disabled="{{picker}}" bindchange="bindPickerTime" value="{{index}}" range="{{times}}">
+            <picker class="comboBox" bindchange="bindPickerTime" value="{{index}}" range="{{times}}">
                 <view class="picker">
                   {{times[index]}}
                 </view>
@@ -20,7 +20,7 @@
         <view class="name iconfont icon-floor">
             预约楼层
             <picker class="comboCovers" disabled="{{picker}}" bindchange="bindPickerOrder" value="{{first}}" range="{{floor}}">
-                <view class="picker">
+                <view class="picker {{picker == true ? 'comboRoom' : ''}}">
                   {{floor[first]}}
                 </view>
             </picker>
