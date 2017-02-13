@@ -1,5 +1,4 @@
 <!--pages/personal/personal.wxml-->
-<page>
 <view class="personalWrap">
     <view class="personalMe" >
         <image src="{{userHead}}" style="width:68px;height:68px;border:1px solid #ddd;float:left;margin:20rpx 20rpx;border-radius: 50%;"></image>
@@ -20,4 +19,3 @@
 </view>
 <import src="../../template/template.wxml"/>
 <template is="qrcode" />
-</page>
