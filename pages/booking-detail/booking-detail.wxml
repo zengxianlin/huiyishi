@@ -1,2 +1,42 @@
 <!--pages/booking-detail/booking-detail.wxml-->
-<text>pages/booking-detail/booking-detail.wxml</text>
+<view class="container">
+   <view class="userDate">
+        <view class="userName iconfont icon-name">
+            姓名
+            <text>{{userName}}</text>
+        </view>
+        <view class="userPhone iconfont icon-phone">
+            手机号
+            <text>{{userPhone}}</text>
+        </view>
+        <view class="userTime iconfont icon-time">
+            日期筛选
+            <picker class="comboBox"  mode="date"  bindchange="bindDateChange" value="{{date}}" start='{{startDate}}' end='2019-09-01'>
+                <view class="picker">
+                  {{date}}
+                </view>
+            </picker>
+        </view>
+        <view class="name iconfont icon-time">
+            时间筛选
+            <picker class="comboCovers" disabled="{{picker}}" bindchange="bindPickerOrder" value="{{first}}" range="{{floor}}">
+                <view class="picker {{picker == true ? 'comboRoom' : ''}}">
+                  {{floor[first]}}
+                </view>
+            </picker>
+        </view>
+        <view class="name iconfont icon-floor">
+            预约楼层
+            <text>{{bookFloor}}</text> 
+        </view>
+        <view class="name iconfont icon-seat">
+            平面图
+            <text>{{bookPlan}}</text>           
+        </view>
+        <view class="name iconfont icon-seat" style="border:none">
+            {{bookArea}}         
+        </view>
+        <image src="../../images/ditu.png" style="width:90%;margin: 0 auto;display:block;"></image> 
+    </view>
+    <button type="default" bindtap="btnSubmit" hover-class="other-button-hover">{{btnSubmit}}</button>
+</view>
