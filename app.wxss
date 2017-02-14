@@ -142,6 +142,8 @@ button{
     background-color: #b02923;
     color:#fff;
     width:80%;
+    margin-top:80px;
+
 }
 /* 二维码浮标 */
 .qrcode{
