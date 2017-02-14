@@ -129,6 +129,20 @@ view,navigator{
   height: 46px;
   font-size:26rpx;
 }
+
+.button-hover {
+    background-color: #b02923;
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+    background-color: #b02923;
+    color:#fff;
+}
+button{
+    background-color: #b02923;
+    color:#fff;
+    width:80%;
+}
 /* 二维码浮标 */
 .qrcode{
   position: fixed;

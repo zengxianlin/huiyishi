@@ -1,2 +1,47 @@
 <!--pages/booking-detail/booking-detail.wxml-->
-<text>pages/booking-detail/booking-detail.wxml</text>
+<view class="container">
+    <view class="header">
+        <view class="header-date">
+            日期：<text>2017-10-16</text>
+        </view>
+        <view class="header-time">
+            时间：<text>2017-10-16</text>
+        </view>
+        <view class="header-qrcode iconfont icon-qrcode"></view>
+    </view>
+    <view class="feather">
+        类型：<view class="feather-room chosen">
+                 <i class="icon-room"></i>
+                 会议室
+              </view>
+              <view class="feather-seats barred">
+                 <i class="icon-seats"></i>
+                 座位
+              </view>
+        楼层：<view class="feather-floor choice">
+                1F
+                 <i class="icon-arrowB"></i>
+              </view>
+    </view>
+    <view class="region">
+        <view class="region-module {{region == 'seat' ? 'region-seat' : 'region-room'}}">
+            <block wx:for="{{regionDateSeat}}">
+                <view class="region-title">
+                    {{item.title}}：
+                      <text>({{regionTitle}})</text>
+                </view>
+                <view class="region-conston">
+                    <block wx:for="{{item.regionlist}}" wx:for-item="items">
+                        <view data-chosen="{{items.chosen}}" class="{{chosens == items.chosen ? '' : 'barred'}}" bindtap="chooseBtn">{{items.text}}</view>
+                    </block>
+                </view>
+            </block>
+        </view>
+
+        <view class="region-title">楼层平面图：</view>
+        <view class="drawings">
+            <image src="./../../images/ico_ditu.png"></image>
+        </view>
+    </view>
+    <button type="default" class="button-Submit" bindtap="defaultLogin" data-login="{{login}}" hover-class="other-button-hover">提交预定</button>
+</view>

@@ -4,21 +4,7 @@ page{
     /*background-color:#fff;*/
     font-size:30rpx;
 }
-.button-hover {
-    background-color: #b02923;
-}
-/** 添加自定义button点击态样式类**/
-.other-button-hover {
-    background-color: #b02923;
-    color:#fff;
-}
-button{
-    background-color: #b02923;
-    color:#fff;
-    top:200rpx;
-    width:80%;
 
-}
 .personalWrap{
     /*margin:10rpx;*/
 }

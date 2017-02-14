@@ -15,13 +15,13 @@
       </view>
     </view>
     <view class="menuWrap-item">
-      <navigator class="menuWrap-item-navi" url="../sitting/sitting">
+      <navigator class="menuWrap-item-navi" url="../booking-detail/booking-detail?type=seat">
         <span class="iconfont icon-zuowei"></span>
         <text>预约座位</text>
       </navigator>
     </view>
     <view class="menuWrap-item">
-      <navigator class="menuWrap-item-navi" url="../conference/conference">
+      <navigator class="menuWrap-item-navi" url="../booking-detail/booking-detail?type=room">
         <span class="iconfont icon-huiyishi"></span>
         <text>预约会议室</text>
       </navigator>
