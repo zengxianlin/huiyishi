@@ -2,37 +2,39 @@
 <view class="container">
     <view class="header">
         <view class="header-date">
-            日期：<text>2017-10-16</text>
+            日期：<picker mode="date" bindchange="bindDateChange" value="{{date}}" start='{{startDate}}' end='2019-09-01'><text class="picker">{{date}}</text></picker>
         </view>
         <view class="header-time">
-            时间：<text>2017-10-16</text>
+            时间：<picker disabled="{{picker}}" bindchange="bindPickerOrder" value="{{first}}" range="{{daytime}}"><text class="picker">{{daytime[first]}}</text>
+            </picker>
         </view>
-        <view class="header-qrcode iconfont icon-qrcode"></view>
+        <view class="header-qrcode iconfont icon-qrcode" bindtap="getScanning"></view>
     </view>
-    <view class="feather">
-        类型：<view class="feather-room chosen">
-                 <i class="icon-room"></i>
+    <view class="feather {{region == 'seat' ? 'feather-seats' : 'feather-chosen'}}">
+        类型：<view class="feather-room">
+                 <i class="iconfont icon-huiyishi"></i>
                  会议室
               </view>
-              <view class="feather-seats barred">
-                 <i class="icon-seats"></i>
+              <view class="feather-seats">
+                 <i class="iconfont icon-zuowei"></i>
                  座位
               </view>
         楼层：<view class="feather-floor choice">
-                1F
-                 <i class="icon-arrowB"></i>
+                 <!-- <i class="icon-arrowB"></i> -->
+                 <picker disabled="{{picker}}" bindchange="bindPickerFloor" value="{{num}}" range="{{floor}}"><text class="picker">{{floor[num]}}</text>
+            </picker>
               </view>
     </view>
     <view class="region">
         <view class="region-module {{region == 'seat' ? 'region-seat' : 'region-room'}}">
-            <block wx:for="{{regionDateSeat}}">
+            <block wx:for="{{regionModule}}">
                 <view class="region-title">
                     {{item.title}}：
                       <text>({{regionTitle}})</text>
                 </view>
                 <view class="region-conston">
                     <block wx:for="{{item.regionlist}}" wx:for-item="items">
-                        <view data-chosen="{{items.chosen}}" class="{{chosens == items.chosen ? '' : 'barred'}}" bindtap="chooseBtn">{{items.text}}</view>
+                        <view data-chosen="{{items.chosen}}" data-options="{{items.options}}" data-index="{{index}}" class="{{chosens == items.chosen ? '' : 'barred'}} {{items.options == true ? 'chosen' : 'nochosen'}}" bindtap="chooseBtn">{{items.text}}</view>
                     </block>
                 </view>
             </block>

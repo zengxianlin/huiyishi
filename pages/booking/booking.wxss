@@ -1,6 +1,6 @@
 /* pages/booking/booking.wxss */
-.container{
-    /* margin: 0 20rpx; */
+page{
+    background-color:#fff;
 }
 .header{
     background-color: #b02923;
@@ -76,30 +76,28 @@
     bottom: 0;
     right: 0;
 }
-.feather i{
+.feather-room .iconfont{
     width:40rpx;
     height: 40rpx;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    display:inline-block;
-    vertical-align: middle;
     margin-right: 4rpx;
+    font-size: 36rpx;
 }
 .feather-floor i{
     width:36rpx;
     height: 36rpx;
+    display: inline-block;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
 }
-.chosen .icon-room{
-    background-image: url('./../../images/icon/ico_huiyi_A.png');
+.feather-seats .feather-room,.feather-chosen .feather-seats{
+    background-color: #c6c6c6;
+    color: #999;
 }
-.barred .icon-room{
-    background-image: url('./../../images/icon/ico_huiyi_B.png');
-}
-.chosen .icon-seats{
-    background-image: url('./../../images/icon/ico_huiyi_A.png');
-}
-.barred .icon-seats{
-    background-image: url('./../../images/icon/ico_zuowei_B.png');
+.feather-seats .feather-seats,.feather-chosen .feather-room{
+    background-color: #b02923;
+    color: #fff;
+    position: relative;
 }
 .chosen .icon-arrowB{
     background-image: url('./../../images/icon/nav_fanhui_A.png');
@@ -168,8 +166,9 @@
     width:100%;
     height: 658rpx;
 }
-
-
+.button-Submit{
+    margin: 70rpx auto;
+}
 /* 会议室 */
 .region-room .region-conston> view{
    width: 25%;
@@ -180,4 +179,31 @@
     width: 16.666666667%;
     height: 70rpx;
     line-height: 70rpx;
+}
+picker{
+    display: inline-block;
+}
+.picker{
+    position: relative;
+    display: inline-block;
+    padding-right:36rpx;
+    font-size:30rpx;
+}
+.picker:before {
+    content:'';
+    height: 8px;
+    width: 8px;
+    display: block;
+    border: 1px solid #b02923;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    position: absolute;
+    top: 6px;
+    right: 8rpx;
+    -webkit-transform: rotate(135deg);
+       -moz-transform: rotate(135deg);
+            transform: rotate(135deg);
+}
+.feather-floor .picker::before{
+    top:24rpx;
 }
