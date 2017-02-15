@@ -93,20 +93,20 @@ Page({
     this.setData({
       region: options.type,
       date:util.formatTime(new Date)
-    })
+    });
     if(options.type == 'seat'){
       var seats = dataSeat
       seats['userChosen'] = ''
       this.setData({
         regionDataSeat: seats
-      })
+      });
     }else{
       var rooms = dataRoom
       rooms['userChosen'] = ''
       this.setData({
         regionDataRoom: rooms
-      })
-    }
+      });
+    };
   },
   onReady:function(){
     // 页面渲染完成
@@ -124,61 +124,69 @@ Page({
     var chosen = res.currentTarget.dataset.chosen;
     var mark = res.currentTarget.dataset.mark;
     if(!chosen){
-      var seats = this.data.regionDataSeat
+      var seats = this.data.regionDataSeat;
       this.setData({
         userChosen: mark,
         regionDataSeat: seats
-      })
-    }
+      });
+    };
   },
   chooseRoom:function(res){
     var chosen = res.currentTarget.dataset.chosen;
     var mark = res.currentTarget.dataset.mark;
     if(!chosen){
-      var rooms = this.data.regionDataRoom
+      var rooms = this.data.regionDataRoom;
       this.setData({
         userChosen: mark,
         regionDataRoom: rooms
-      })
-    }
+      });
+    };
   },
   bindDateChange: function(e) {
     // 日期
-    console.log(e);
     this.setData({
       date: e.detail.value
-    })
+    });
   },
   bindPickerOrder: function(e) {
     // 时间
     this.setData({
       first: e.detail.value
-    })
+    });
   },
   bindPickerFloor: function(e){
     // 楼层
     this.setData({
       num: e.detail.value
-    })
+    });
   },
   submitBtn: function(e){
+    let title,type = this.data.region
     if(this.data.userChosen == ''){
-      var title;
-      if(this.data.region == 'seat'){
-        title = '请选择座位，再提交预定';
+      if(type == 'seat'){
+        title = '请选择座位';
       }else{
-        title = '请选择会议室，再提交预定';
-      }
+        title = '请选择会议室';
+      };
       wx.showToast({
         title: title,
         icon: 'loading',
         duration: 1000
-      })
+      });
+      return false
     }else{
+      wx.showToast({
+        title: '提交预定',
+        icon: 'loading',
+        duration: 10000
+      });
+    };
+    setTimeout(function(){
+      wx.hideToast();
       wx.navigateTo({
-        url: '../booking-detail/booking-detail?type='+this.data.region
-      })
-    }
+        url: '../booking-detail/booking-detail?type='+type
+      });
+    },2000);
   },
   getScanning: function () {
     app.getScanning()
