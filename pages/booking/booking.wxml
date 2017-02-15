@@ -34,7 +34,7 @@
                 </view>
                 <view class="region-conston">
                     <block wx:for="{{item.children}}" wx:for-item="child" wx:for-index="cIdx">
-                        <view data-chosen="{{child.chosen}}" data-mark="{{item.id}}-{{child.id}}" class="{{ child.chosen ? 'barred' : ''}} {{regionDataSeat.userChosen == item.id+'-'+child.id ? 'chosen' : 'nochosen'}}" bindtap="chooseSeat">{{child.title}}</view>
+                        <view data-chosen="{{child.chosen}}" data-mark="{{item.id}}-{{child.id}}" class="{{ child.chosen ? 'barred' : ''}} {{userChosen == item.id+'-'+child.id ? 'chosen' : 'nochosen'}}" bindtap="chooseSeat">{{child.title}}</view>
                     </block>
                 </view>
             </block>
@@ -46,7 +46,7 @@
             </view>
             <view class="region-conston">
                     <block wx:for="{{regionDataRoom.room}}">
-                        <view data-chosen="{{item.chosen}}" data-mark="{{item.id}}" class="{{item.chosen ? 'barred' : ''}} {{regionDataRoom.userChosen == item.id ? 'chosen' : 'nochosen'}}" bindtap="chooseRoom">{{item.title}}</view>
+                        <view data-chosen="{{item.chosen}}" data-mark="{{item.id}}" class="{{item.chosen ? 'barred' : ''}} {{userChosen == item.id ? 'chosen' : 'nochosen'}}" bindtap="chooseRoom">{{item.title}}</view>
                     </block>
             </view>
         </view>
@@ -56,5 +56,5 @@
             <image src="./../../images/ico_ditu.png"></image>
         </view>
     </view>
-    <button type="default" class="button-Submit" bindtap="defaultLogin" data-login="{{login}}" hover-class="other-button-hover">提交预定</button>
+    <button type="default" class="button-Submit" bindtap="submitBtn" data-login="{{login}}" hover-class="other-button-hover">提交预定</button>
 </view>

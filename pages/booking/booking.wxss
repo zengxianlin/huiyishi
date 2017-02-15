@@ -57,16 +57,16 @@ page{
    width: 36rpx;
    height: 36rpx;
 }
-.barred{
+.feather-seats .feather-room,.feather-chosen .feather-seats,.barred{
     background-color: #c6c6c6;
     color: #999;
 }
-.chosen{
+.feather-seats .feather-seats,.feather-chosen .feather-room,.chosen,.feather-floor.chosen{
     background-color: #b02923;
     color: #fff;
     position: relative;
 }
-.chosen:after{
+.chosen:after,.feather-seats .feather-seats:after,.feather-chosen .feather-room:after{
     content: '';
     background-image: url('./../../images/icon/ico_gouxuan.png');
     background-size: 100%;
@@ -82,29 +82,6 @@ page{
     margin-right: 4rpx;
     font-size: 36rpx;
 }
-.feather-floor i{
-    width:36rpx;
-    height: 36rpx;
-    display: inline-block;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-}
-.feather-seats .feather-room,.feather-chosen .feather-seats{
-    background-color: #c6c6c6;
-    color: #999;
-}
-.feather-seats .feather-seats,.feather-chosen .feather-room{
-    background-color: #b02923;
-    color: #fff;
-    position: relative;
-}
-.chosen .icon-arrowB{
-    background-image: url('./../../images/icon/nav_fanhui_A.png');
-}
-.choice .icon-arrowB{
-    background-image: url('./../../images/icon/nav_fanhui_B.png');
-}
 .feather-floor.choice{
     border: 1px solid #d1d1d1;
     color: #b02923;
@@ -112,10 +89,10 @@ page{
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
-.feather-floor.chosen{
+/* .feather-floor.chosen{
     background-color: #b02923;
     color:#fff;
-}
+} */
 .region {
     background-color: #fff;
 }

@@ -85,7 +85,8 @@ Page({
     first: 0,
     num: 0,
     regionDataSeat:[],
-    regionDataRoom:[]
+    regionDataRoom:[],
+    userChosen: ''
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -124,8 +125,8 @@ Page({
     var mark = res.currentTarget.dataset.mark;
     if(!chosen){
       var seats = this.data.regionDataSeat
-      seats['userChosen'] = mark
       this.setData({
+        userChosen: mark,
         regionDataSeat: seats
       })
     }
@@ -135,8 +136,8 @@ Page({
     var mark = res.currentTarget.dataset.mark;
     if(!chosen){
       var rooms = this.data.regionDataRoom
-      rooms['userChosen'] = mark
       this.setData({
+        userChosen: mark,
         regionDataRoom: rooms
       })
     }
@@ -159,6 +160,25 @@ Page({
     this.setData({
       num: e.detail.value
     })
+  },
+  submitBtn: function(e){
+    if(this.data.userChosen == ''){
+      var title;
+      if(this.data.region == 'seat'){
+        title = '请选择座位，再提交预定';
+      }else{
+        title = '请选择会议室，再提交预定';
+      }
+      wx.showToast({
+        title: title,
+        icon: 'loading',
+        duration: 1000
+      })
+    }else{
+      wx.navigateTo({
+        url: '../booking-detail/booking-detail?type='+this.data.region
+      })
+    }
   },
   getScanning: function () {
     app.getScanning()
