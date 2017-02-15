@@ -27,15 +27,6 @@ App({
         wx.navigateTo({
           url: '../'+result
         })
-      },
-      fail: (res) => {
-        wx.showModal({
-          title: '提示',
-          confirmColor: '#b02923',
-          content: res.errMsg,
-          success: function(res) {
-          }
-        })
       }
     })
   },
