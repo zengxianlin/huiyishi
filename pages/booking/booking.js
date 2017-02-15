@@ -1,6 +1,80 @@
 // pages/booking/booking.js
 const app = getApp();
 const util = require('../../utils/util.js');
+const dataRoom = {
+	room:[{
+		id:"10001",
+		title:"会议室A",
+		chosen:true,
+	},{
+		id:"10002",
+		title:"会议室B",
+		chosen:false,
+	},{
+		id:"10003",
+		title:"会议室C",
+		chosen:false,
+	},{
+		id:"10004",
+		title:"会议室D",
+		chosen:true,
+	},{
+		id:"10005",
+		title:"会议室E",
+		chosen:false,
+	},{
+		id:"10006",
+		title:"会议室F",
+		chosen:false,
+	}]
+};
+const dataSeat = {
+	seat:[{
+		id:"10001",
+		title:"A区",
+		children:[{
+			id:"20001",
+			title:"01",
+			chosen:true,
+		},{
+			id:"20002",
+			title:"02",
+			chosen:false,
+		},{
+			id:"20003",
+			title:"03",
+			chosen:true,
+		},{
+			id:"20004",
+			title:"04",
+			chosen:true,
+		}]
+	},{
+		id:"10002",
+		title:"B区",
+		children:[{
+			id:"20001",
+			title:"01",
+			chosen:true,
+		},{
+			id:"20002",
+			title:"02",
+			chosen:false,
+		},{
+			id:"20003",
+			title:"03",
+			chosen:false,
+		},{
+			id:"20004",
+			title:"04",
+			chosen:true,
+		},{
+			id:"20005",
+			title:"05",
+			chosen:true,
+		}]
+	}]
+}
 Page({
   data:{
     region: 'seat',
@@ -10,89 +84,8 @@ Page({
     floor:['1F', '2F', '3F'],
     first: 0,
     num: 0,
-    regionTitle:"只能单选当天座位",
-    regionDateSeat:[{
-      type:"seat",
-      title:"A区",
-      regionlist:[{
-            chosen: true,
-            options: false,
-            text: "01"
-          },{
-            chosen: false,
-            options: true,
-            text: "02"
-          },{
-            chosen: false,
-            options: false,
-            text: "03"
-          },{
-            chosen: false,
-            options: false,
-            text: "04"
-          },{
-            chosen: true,
-            options: false,
-            text: "05"
-          },{
-            chosen: true,
-            options: false,
-            text: "06"
-          },{
-            chosen: false,
-            options: false,
-            text: "07"
-          },{
-            chosen: true,
-            options: false,
-            text: "08"
-          },{
-            chosen: false,
-            options: false,
-            text: "09"
-          }
-      ]
-    }],
-    regionDateRoot:[{
-      type:"root",
-      title:"会议室",
-      regionlist:[
-          {
-            chosen: true,
-            options: false,
-            text: "会议室A"
-          },{
-            chosen: false,
-            options: false,
-            text: "会议室B"
-          },{
-            chosen: false,
-            options: false,
-            text: "会议室C"
-          },{
-            chosen: false,
-            options: false,
-            text: "会议室D"
-          },{
-            chosen: true,
-            options: false,
-            text: "会议室E"
-          },{
-            chosen: true,
-            options: false,
-            text: "会议室G"
-          },{
-            chosen: false,
-            options: false,
-            text: "会议室H"
-          },{
-            chosen: true,
-            options: true,
-            text: "会议室I"
-          }
-      ]
-    }],
-    regionModule:[]
+    regionDataSeat:[],
+    regionDataRoom:[]
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -100,22 +93,25 @@ Page({
       region: options.type,
       date:util.formatTime(new Date)
     })
+    if(options.type == 'seat'){
+      var seats = dataSeat
+      seats['userChosen'] = ''
+      this.setData({
+        regionDataSeat: seats
+      })
+    }else{
+      var rooms = dataRoom
+      rooms['userChosen'] = ''
+      this.setData({
+        regionDataRoom: rooms
+      })
+    }
   },
   onReady:function(){
     // 页面渲染完成
   },
   onShow:function(){
     // 页面显示
-    if( this.data.region == 'seat'){
-      this.setData({
-        regionModule: this.data.regionDateSeat
-      })
-    }else{
-      this.setData({
-        regionModule: this.data.regionDateRoot
-      })
-    }
-    // console.log(this.data.regionModule)
   },
   onHide:function(){
     // 页面隐藏
@@ -123,30 +119,27 @@ Page({
   onUnload:function(){
     // 页面关闭
   },
-  chooseBtn:function(res){
-    // 座位选择 / 会议室选择
+  chooseSeat:function(res){
     var chosen = res.currentTarget.dataset.chosen;
-    var index = res.currentTarget.dataset.index;
-    var optionst = this.data.regionModule[0].regionlist[index].options;
-    console.log(this.data.regionModule)
-
-
-    // if(optionst == false){
-      // this.setData({
-      //   regionModule: this.data.regionModule[0].regionlist[index].options
-      // })
-      // optionst = true
-    // }else{
-      // optionst = false
-    // }
-    console.log(optionst)
-
-    // if(chosen == false){
-    //   this.setData({
-    //     regionModule: !optionst
-    //   })
-    //   console.log(options)
-    // }
+    var mark = res.currentTarget.dataset.mark;
+    if(!chosen){
+      var seats = this.data.regionDataSeat
+      seats['userChosen'] = mark
+      this.setData({
+        regionDataSeat: seats
+      })
+    }
+  },
+  chooseRoom:function(res){
+    var chosen = res.currentTarget.dataset.chosen;
+    var mark = res.currentTarget.dataset.mark;
+    if(!chosen){
+      var rooms = this.data.regionDataRoom
+      rooms['userChosen'] = mark
+      this.setData({
+        regionDataRoom: rooms
+      })
+    }
   },
   bindDateChange: function(e) {
     // 日期
