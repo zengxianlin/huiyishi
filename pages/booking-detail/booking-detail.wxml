@@ -11,7 +11,7 @@
         </view>
         <view class="userTime iconfont icon-time">
             日期筛选
-            <picker class="comboBox"  mode="date"  bindchange="bindDateChange" value="{{date}}" start='{{startDate}}' end='2019-09-01'>
+            <picker class="comboBox"  mode="date" disabled="{{picker}}" bindchange="bindDateChange" value="{{date}}" start='{{startDate}}' end='2019-09-01'>
                 <view class="picker">
                   {{date}}
                 </view>
@@ -27,16 +27,16 @@
         </view>
         <view class="name iconfont icon-floor">
             预约楼层
-            <text>{{bookFloor}}</text> 
+            <text>{{bookFloor}}</text>
         </view>
         <view class="name iconfont icon-seat">
             平面图
-            <text>{{bookPlan}}</text>           
+            <text>{{bookPlan}}</text>
         </view>
         <view class="name iconfont icon-seat" style="border:none">
-            {{bookArea}}         
+            {{bookArea}}
         </view>
-        <image src="../../images/ditu.png" style="width:100%;height:360rpx;margin: 0 auto;display:block;"></image> 
+        <image src="../../images/ditu.png" style="width:100%;height:360rpx;margin: 0 auto;display:block;"></image>
     </view>
     <button type="default" bindtap="btnSubmit" hover-class="other-button-hover">{{btnSubmit}}</button>
 </view>

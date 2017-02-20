@@ -68,7 +68,7 @@ page{
 }
 .chosen:after,.feather-seats .feather-seats:after,.feather-chosen .feather-room:after{
     content: '';
-    background-image: url('./../../images/icon/ico_gouxuan.png');
+    background-image: url('../../images/icon/ico_gouxuan.png');
     background-size: 100%;
     width: 26rpx;
     height: 26rpx;

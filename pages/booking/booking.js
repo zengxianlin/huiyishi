@@ -86,7 +86,10 @@ Page({
     num: 0,
     regionDataSeat:[],
     regionDataRoom:[],
-    userChosen: ''
+    userChosen: '',
+    userId: '',
+    userTitle: '',
+    userText: ''
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -122,23 +125,25 @@ Page({
   },
   chooseSeat:function(res){
     var chosen = res.currentTarget.dataset.chosen;
-    var mark = res.currentTarget.dataset.mark;
     if(!chosen){
       var seats = this.data.regionDataSeat;
       this.setData({
-        userChosen: mark,
-        regionDataSeat: seats
+        userChosen: res.currentTarget.dataset.mark,
+        regionDataSeat: seats,
+        userId: res.currentTarget.dataset.userid,
+        userTitle: res.currentTarget.dataset.title,
+        userText: res.currentTarget.dataset.usertext
       });
     };
   },
   chooseRoom:function(res){
     var chosen = res.currentTarget.dataset.chosen;
-    var mark = res.currentTarget.dataset.mark;
     if(!chosen){
-      var rooms = this.data.regionDataRoom;
       this.setData({
-        userChosen: mark,
-        regionDataRoom: rooms
+        userChosen: res.currentTarget.dataset.mark,
+        regionDataRoom: this.data.regionDataRoom,
+        userText: res.currentTarget.dataset.usertext,
+        userId: res.currentTarget.dataset.mark
       });
     };
   },
@@ -160,14 +165,24 @@ Page({
       num: e.detail.value
     });
   },
+  generateMixed: function(n){
+    // 随机数
+    var res = "";
+    var chars = ['0','1','2','3','4','5','6','7','8','9'];
+    for(var i = 0; i < n ; i ++) {
+        var id = Math.ceil(Math.random()*9);
+        res += chars[id];
+    }
+    return res;
+  },
   submitBtn: function(e){
-    let title,type = this.data.region
+    let title,data,
+        type = this.data.region,
+        obtain = wx.getStorageSync(type) /*获取保存的预定数据*/,
+        mixed = this.generateMixed(6)+this.data.userId /*获取随机数+预定userId*/;
+
     if(this.data.userChosen == ''){
-      if(type == 'seat'){
-        title = '请选择座位';
-      }else{
-        title = '请选择会议室';
-      };
+      type == 'seat' ? title = '请选择座位' : title = '请选择会议室';
       wx.showToast({
         title: title,
         icon: 'loading',
@@ -181,12 +196,34 @@ Page({
         duration: 10000
       });
     };
-    setTimeout(function(){
-      wx.hideToast();
-      wx.navigateTo({
-        url: '../booking-detail/booking-detail?type='+type
-      });
-    },2000);
+
+    obtain == '' ? obtain = {} : obtain;
+
+    type == 'seat' ? obtain[mixed] = {
+      date: this.data.date,
+      daytime: this.data.daytime[this.data.first],
+      seatNum: this.data.userTitle,
+      userText: this.data.userText,
+      floorNum: this.data.floor[this.data.num],
+      first: this.data.num
+    } : obtain[mixed] = {
+      date: this.data.date,
+      daytime: this.data.daytime[this.data.first],
+      roomNum: this.data.userText,
+      floorNum: this.data.floor[this.data.num],
+      first: this.data.num
+    };
+
+    app.setStorageUser({key: this.data.region,data: obtain}, function (res){
+      if(res.errMsg == 'setStorage:ok'){
+        setTimeout(function(){
+          wx.hideToast();
+          wx.navigateTo({
+            url: '../booking-detail/booking-detail?type='+type+'&userId='+mixed
+          });
+        },2000);
+      }
+    });
   },
   getScanning: function () {
     app.getScanning()

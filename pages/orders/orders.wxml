@@ -1,59 +1,41 @@
 <!--pages/orders/orders.wxml-->
-<view class="ordersTab">
-    <text bindtap="tabLeft" style="color:{{colLeft}};">座位</text>
-    <text bindtap="tabRight" style="color:{{colRight}};">会议室</text>
+<view class="ordersTab {{ordersCut == true ? 'ordersLeft' : 'ordersRight'}}">
+    <text bindtap="tabLeft">座位</text>
+    <text bindtap="tabRight">会议室</text>
     <view class="tabCalled" style="left:{{Left}}"></view>
 </view>
 <view style="height:90rpx;"></view>
 <view class="orderContent" hidden="{{hidden}}">
-    <!-- 会议室 -->
-    <block wx:for="{{room}}">
-        <view wx:if="{{item.complate === true}}" class="ordersRoom" hidden="{{ordersRoom}}" >
-            <view class="roomLeft">
-                <text>预定时间: {{item.date}}</text>
-                <text>楼层: {{item.floor}}</text>
-                <text>会议室门号: {{item.roomNo}}</text>
+    <!-- 座位号 -->
+    <block wx:for="{{orderlist}}" wx:if="{{region == 'seat'}}">
+        <view class="ordersSeat">
+            <view class="seatLeft">
+                <text>楼层: {{item.floorNum}}</text>
+                <text>门牌号: {{item.seatNum}}</text>
+                <text>座位号: {{item.userText}}</text>
             </view>
-            <view class="roomBut" hidden="{{ordersBut}}">
-                <text bindtap="defaultLogin" > 归还 </text>
-                <text bindtap="defaultLogin" > 取消 </text>
-            </view>
-        </view>
-        <!-- 已完成 -->
-        <view  wx:elif="{{item.complate !== true}}" class="ordersRoom" hidden="{{ordersRoom}}" style="color:#999;">
-            <view class="roomLeft">
-                <text>预定时间: {{item.date}}</text>
-                <text>楼层: {{item.floor}}</text>
-                <text>会议室门号: {{item.roomNo}}</text>
+            <view class="seatBut">
+                <text> 归还 </text>
+                <text bindtap="ordersCancel" data-userId="{{index}}" data-region="{{region}}"> 取消 </text>
             </view>
         </view>
     </block>
-    <!-- 座位号 -->
-    <block wx:for="{{seat}}">
-        <view wx:if="{{item.complate === true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:{{orderColor}}">
-            <view class="seatLeft">
-                <!-- <text>预定时间: {{item.date}}</text> -->
-                <text>楼层: {{item.floor}}</text>
-                <text>门牌号: {{item.roomNo}}</text>
-                <text>座位号: {{item.seatNo}}</text>
+    <!-- 会议室 -->
+    <block wx:for="{{orderlist}}" wx:if="{{region == 'room'}}">
+        <view class="ordersRoom">
+            <view class="roomLeft">
+                <text>预定时间: {{item.date}} {{item.daytime}}</text>
+                <text>楼层: {{item.floorNum}}</text>
+                <text>会议室门号: {{item.roomNum}}</text>
             </view>
-            <view class="seatBut" hidden="{{ordersBut}}">
-                <text bindtap="defaultLogin" > 归还 </text>
-                <text bindtap="defaultLogin" > 取消 </text>
-            </view>
-        </view>
-        <!-- 已完成 -->
-        <view wx:elif="{{item.complate !== true}}" class="ordersSeat" hidden="{{ordersSeat}}" style="color:#999">
-            <view class="seatLeft">
-                <!-- <text>预定时间: {{item.date}}</text> -->
-                <text>楼层: {{item.floor}}</text>
-                <text>门牌号: {{item.roomNo}}</text>
-                <text>座位号: {{item.seatNo}}</text>
+            <view class="roomBut">
+                <text> 归还 </text>
+                <text bindtap="ordersCancel" data-userId="{{index}}" data-region="{{region}}"> 取消 </text>
             </view>
         </view>
     </block>
 </view>
-<view class="ordersTitle" hidden="{{prompt}}">{{ordersTitle}}</view>
+<view class="ordersTitle" wx:if="{{orderlist == 0}}">{{ordersTitle}}</view>
 
 
 

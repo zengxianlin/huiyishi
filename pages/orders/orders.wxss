@@ -103,3 +103,6 @@
     font-size:16px;
     color:#666;
 }
+.ordersLeft text:nth-child(1),.ordersRight text:nth-child(2){
+    color:#b02923;
+}

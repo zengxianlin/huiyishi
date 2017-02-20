@@ -9,16 +9,39 @@ Page({
     bookArea:'A区',
     index: 0,
     first: 0,
-    picker:true
+    picker:true,
+    type: ''
   },
   onLoad:function(options){
-
     // 页面初始化 options为页面跳转所带来的参数
-    if(options.id == undefined){
+
+    var obtain = wx.getStorageSync(options.type);
+    if(options.userId == undefined){
       this.setData({
         picker: false,
         date:util.formatTime(new Date)
       })
+    }else{
+      if(obtain[options.userId]){
+        this.setData({
+          picker: true,
+          type: options.type,
+          bookFloor: obtain[options.userId].floorNum,
+          date: obtain[options.userId].date,
+          first: obtain[options.userId].first
+        })
+        if(options.type == 'seat'){
+          this.setData({
+            bookPlan: obtain[options.userId].seatNum+obtain[options.userId].userText,
+            bookArea: obtain[options.userId].seatNum
+          })
+        }else{
+          this.setData({
+            bookPlan: obtain[options.userId].roomNum,
+            bookArea: '会议室'
+          })
+        }
+      }
     }
   },
   onReady:function(){
@@ -51,7 +74,7 @@ Page({
     // 页面关闭
   },
    bindDateChange: function(e) {
-    // 日期    
+    // 日期
     console.log(e);
     this.setData({
       date: e.detail.value
@@ -63,18 +86,19 @@ Page({
     })
   },
   btnSubmit:function(){
+    var _that = this;
     if(this.data.login){
       wx.showToast({
         title: '预定成功',
         icon: 'success',
         duration: 1000,
         success:function(){
-            setTimeout(function(){
-              console.log('预定成功')
-              wx.switchTab({
-                url: '../index/index'
-              })
-            },1000)   
+          setTimeout(function(){
+            console.log('预定成功')
+            wx.switchTab({
+              url: '../orders/orders?type='+_that.data.type
+            })
+          },1000)
         }
       })
     }else{

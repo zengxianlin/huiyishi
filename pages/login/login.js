@@ -79,9 +79,14 @@ Page({
       return false;
     }
     let params = {
-      'userName': userName,
-      'userPhone': 13011111111
+      key:'userInfo',
+      data:{
+        userName: userName,
+        userPhone: 13011111111
+      }
     }
+    console.log(params)
+
     that.login(params);
   }
 })

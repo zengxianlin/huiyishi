@@ -21,6 +21,8 @@ Page({
     ]
   },
   onLoad: function () {
+
+
     var that = this
     /*app.getRequest('https://hseschool.app360.cn/mingpian/wanke/home.json',function(res){
       that.setData({

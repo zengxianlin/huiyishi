@@ -32,13 +32,15 @@ App({
   },
   setStorageUser: function(params,callback){
     wx.setStorage({
-      key:'userInfo',
-      data:params,
+      key: params.key,
+      data: params.data,
       success: function(res) {
         if(callback && typeof callback == 'function'){
           callback(res)
         }
       }
     });
+    // console.log(params)
+
   }
 })
